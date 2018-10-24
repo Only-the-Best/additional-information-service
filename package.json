@@ -1,17 +1,36 @@
 {
-  "name": "",
-  "version": "",
-  "description": "",
-  "author": "",
+  "name": "additional-information-service",
+  "version": "1.0.0",
+  "description": "additional information for Zill-Woah!",
+  "author": "Brian Louie",
   "license": "",
   "engines": {
     "node": ">=6.13.0"
   },
   "scripts": {
+    "test": "jest src/spec/App.test.js",
+    "dev": "webpack -d --mode development --watch"
   },
   "dependencies": {
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0"
   },
   "devDependencies": {
-    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor"
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.6.0",
+    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
+    "jest": "^23.6.0",
+    "regenerator-runtime": "^0.12.1",
+    "webpack": "^4.22.0",
+    "webpack-cli": "^3.1.2"
+  },
+  "jest": {
+    "setupTestFrameworkScriptFile": "<rootDir>src/setupTests.js"
   }
 }
