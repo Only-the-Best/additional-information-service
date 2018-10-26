@@ -30,8 +30,6 @@ describe('<App />', () => {
     expect(wrapper.find('Schools').length).toBe(1);
   });
 
-
-
 });
 
 
@@ -74,6 +72,20 @@ describe('<Home />', () => {
     wrapper.find('#home-header').simulate('click');
     expect(wrapper.find('#home-active').length).toBe(0);
   });
+
+  test('clicking the "Zestimate History & Details" should expand to show more info', () => {
+    wrapper.find('#home-header').simulate('click');
+    wrapper.find('#zestimate-history-title').simulate('click');
+    expect(wrapper.find('#expand-zestimate-details-container').length).toBe(1);
+  });
+
+  test('clicking the "Zestimate History & Details" should hide the link', () => {
+    wrapper.find('#home-header').simulate('click');
+    wrapper.find('#zestimate-history-title').simulate('click');
+    expect(wrapper.find('#zestimate-history-title').length).toBe(0);
+  });
+
+  //change these to components, nest describe blocks?
 
 });
 

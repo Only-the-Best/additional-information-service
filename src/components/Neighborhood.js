@@ -2,7 +2,7 @@ import React from 'react';
 
 const Neighborhood = ({status, expand}) => {
   return (
-    <div className='container'>
+    <div className='main-expand-container'>
       <div >
         <section >
           <h2 id='neighborhood-header' className={status ? 'header-toggle expanded' : 'header-toggle'} onClick={() => expand('neighborhood')}>
