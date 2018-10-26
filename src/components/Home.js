@@ -30,7 +30,7 @@ const Home = class extends React.Component {
           <div id="zestimate-range-container">
             <div id="zestimate-main-label">
               Zestimate
-              <a tabIndex="0" id="A_4" />
+              <a tabIndex="0"  />
             </div>
             <div id="zestimate-dollar-container">
               <div id="zestimate-dollar-display">$10,976,394</div>
@@ -44,7 +44,7 @@ const Home = class extends React.Component {
               <div id="zestimate-range-label-container">
                 <div id="zestimate-range-label">
                   Zestimate Range
-                  <a tabIndex="0" id="A_6" />
+                  <a tabIndex="0" />
                 </div>
                 <div id="zestimate-range-amount">$10.43M - $11.53M</div>
               </div>

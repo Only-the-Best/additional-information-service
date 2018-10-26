@@ -9,9 +9,12 @@
   },
   "scripts": {
     "test": "jest src/spec/App.test.js",
-    "dev": "webpack -d --mode development --watch"
+    "dev": "webpack -d --mode development --watch",
+    "db:seed": "node server/database/data-seed.js"
   },
   "dependencies": {
+    "faker": "^4.1.0",
+    "mongoose": "^5.3.7",
     "react": "^16.6.0",
     "react-dom": "^16.6.0"
   },
