@@ -11,7 +11,6 @@ import Schools from '../components/Schools.js';
 
 
 describe('<App />', () => {
-
   let wrapper;
   beforeEach(() => {
     wrapper = mount(<App />);
@@ -29,12 +28,10 @@ describe('<App />', () => {
     expect(wrapper.find('Neighborhood').length).toBe(1);
     expect(wrapper.find('Schools').length).toBe(1);
   });
-
 });
 
 
 describe('<Expenses />', () => {
-
   let wrapper;
   beforeEach(() => {
     wrapper = mount(<App />);
@@ -51,11 +48,9 @@ describe('<Expenses />', () => {
     wrapper.find('#expenses-header').simulate('click');
     expect(wrapper.find('#expenses-active').length).toBe(0);
   });
-
 });
 
 describe('<Home />', () => {
-
   let wrapper;
   beforeEach(() => {
     wrapper = mount(<App />);
@@ -85,12 +80,10 @@ describe('<Home />', () => {
     expect(wrapper.find('#zestimate-history-title').length).toBe(0);
   });
 
-  //change these to components, nest describe blocks?
-
+  // change these to components, nest describe blocks?
 });
 
 describe('<Mortgage />', () => {
-
   let wrapper;
   beforeEach(() => {
     wrapper = mount(<App />);
@@ -107,11 +100,9 @@ describe('<Mortgage />', () => {
     wrapper.find('#mortgage-header').simulate('click');
     expect(wrapper.find('#mortgage-active').length).toBe(0);
   });
-
 });
 
 describe('<Neighborhood />', () => {
-
   let wrapper;
   beforeEach(() => {
     wrapper = mount(<App />);
@@ -128,11 +119,9 @@ describe('<Neighborhood />', () => {
     wrapper.find('#neighborhood-header').simulate('click');
     expect(wrapper.find('#neighborhood-active').length).toBe(0);
   });
-
 });
 
 describe('<Price />', () => {
-
   let wrapper;
   beforeEach(() => {
     wrapper = mount(<App />);
@@ -149,11 +138,9 @@ describe('<Price />', () => {
     wrapper.find('#price-header').simulate('click');
     expect(wrapper.find('#price-active').length).toBe(0);
   });
-
 });
 
 describe('<Schools />', () => {
-
   let wrapper;
   beforeEach(() => {
     wrapper = mount(<App />);
@@ -170,5 +157,4 @@ describe('<Schools />', () => {
     wrapper.find('#schools-header').simulate('click');
     expect(wrapper.find('#schools-active').length).toBe(0);
   });
-
 });

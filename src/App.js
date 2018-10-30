@@ -6,7 +6,6 @@ import Home from './components/Home.js';
 import Neighborhood from './components/Neighborhood.js';
 import Schools from './components/Schools.js';
 
-
 export default class App extends React.Component {
   constructor(props) {
     super(props);

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Price = ({status, expand}) => {
   return (
-    <div className='main-expand-container'>
+    <div id="price-main-container" className='main-expand-container'>
       <div >
         <section >
           <h2 id='price-header' className={status ? 'header-toggle expanded' : 'header-toggle'} onClick={() => expand('price')}>

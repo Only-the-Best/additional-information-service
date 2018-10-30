@@ -25,7 +25,7 @@ const seed = Array.from({ length: 100 }, () => {
     city: faker.address.city(),
     zip: 98100 + random(99),
     zestimate: zestHistory(),
-    beds: 3 + random(1),
+    beds: 3 + Math.floor(Math.random() * 2.5),
     baths: 2.5 + 0.5 * Math.floor(Math.random() * 3),
     sqFt: 1150 + 10 * random(20),
     status: Math.random() < 0.5 ? 'For Sale' : 'Sold',

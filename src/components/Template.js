@@ -1,6 +1,4 @@
 import React from 'react';
-import ComparableHomes from './ComparableHomes';
-import LocalSalePrices from './LocalSalePrices';
 
 function Template(Component, name) {
   return class extends React.Component {
