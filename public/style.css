@@ -198,7 +198,7 @@
   transform-origin: 63.75px 11px;
 }
 
-#zestimate-change-percentage {
+.zestimate-percentage-decrease {
   color: rgb(252, 56, 74);
   display: inline-block;
   height: 22px;
@@ -211,6 +211,22 @@
   border: 0px none rgb(252, 56, 74);
   outline: rgb(252, 56, 74) none 0px;
 }
+
+
+.zestimate-percentage-increase {
+    color: rgb(3, 192, 74);
+    display: inline-block;
+    height: 22px;
+    text-decoration: none solid rgb(3, 192, 74);
+    width: 57.4688px;
+    column-rule-color: rgb(3, 192, 74);
+    perspective-origin: 28.7344px 11px;
+    transform-origin: 28.7344px 11px;
+    caret-color: rgb(3, 192, 74);
+    border: 0px none rgb(3, 192, 74);
+    outline: rgb(3, 192, 74) none 0px;
+}
+
 
 #zestimate-forecast-image {
   color: rgb(3, 192, 74);
@@ -241,18 +257,8 @@
   transform-origin: 74.25px 11px;
 }
 
-#zestimate-forecast-percentage {
-  color: rgb(3, 192, 74);
-  display: inline-block;
-  height: 22px;
-  text-decoration: none solid rgb(3, 192, 74);
-  width: 57.4688px;
-  column-rule-color: rgb(3, 192, 74);
-  perspective-origin: 28.7344px 11px;
-  transform-origin: 28.7344px 11px;
-  caret-color: rgb(3, 192, 74);
-  border: 0px none rgb(3, 192, 74);
-  outline: rgb(3, 192, 74) none 0px;
+#zestimate-forecast-value {
+    font: normal normal 400 normal 15px / 22.5px Gotham, gotham, Verdana, sans-serif;
 }
 
 #zestimate-history-container {
@@ -868,3 +874,30 @@
   margin: 25px 0px 15px;
   outline: rgb(68, 68, 68) none 0px;
 }/*#zestimate-H3_12*/
+
+#zestimate-graph-toolbar {
+  margin-top: 20px;
+  background-color: lightgray;
+  height: 38px;
+  padding-top: 18px;
+  width: 630px;
+}
+
+#zestimate-graph-selector-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: right;
+  margin-right: 25px;
+  cursor: pointer;
+}
+
+.zestimate-graph-selector {
+  padding: 0px 5px 0px 5px;
+  font-weight: 550;
+}
+
+.selected {
+  border-bottom: solid royalblue;
+  margin-top: 3px;
+}

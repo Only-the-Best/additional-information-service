@@ -2,18 +2,36 @@ import React from 'react';
 import ZestimateDetails from './ZestimateDetails.js';
 import Template from './Template.js';
 import ZestimateChart from './ZestimateChart.js';
+import GraphNavbar from './GraphNavbar.js';
+
+
+
 
 const Home = class extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       zestimateInside: false,
+      selected: 10,
     };
+    this.zestimate = this.props.current.zestimate;
+    this.currentZest = this.zestimate[this.zestimate.length - 1];
+    this.low = this.zestimate.slice(-1)[0] - 29374;
+    this.high = this.zestimate.slice(-1)[0] + 28612;
+    this.lastMonth = this.currentZest - this.zestimate[this.zestimate.length - 2];
+    this.lastMonthChange = (this.lastMonth / this.zestimate[this.zestimate.length - 1]).toFixed(2);
+    this.forecast = this.high + 7298;
+    this.forecastChange = ((this.forecast / this.currentZest) - 1).toFixed(2);
     this.expandHome = this.expandHome.bind(this);
+    this.getSelected = this.getSelected.bind(this);
   }
 
   expandHome() {
     this.setState({ zestimateInside: !this.state.zestimateInside });
+  }
+
+  getSelected(years) {
+    this.setState({selected: years});
   }
 
   render() {
@@ -35,7 +53,7 @@ const Home = class extends React.Component {
                 Zestimate Range<a tabIndex="0" id="zestimate-A_6"></a>
               </div>
               <div id="zestimate-range-value">
-                $11.67M - $13.89M
+                ${this.low} - ${this.high}
               </div>
             </div>
           </div>
@@ -46,7 +64,7 @@ const Home = class extends React.Component {
                 Last 30 Day Change
               </div>
               <div id="zestimate-change-value">
-                -$44,075 <span id="zestimate-change-percentage">(-0.4%)</span>
+                {this.lastMonth > 0 ? `$+${this.lastMonth}` : `-$${this.lastMonth}`} <span id="zestimate-change-percentage" className={this.lastMonth < 0 ? 'zestimate-percentage-decrease' : 'zestimate-percentage-increase'}>({this.lastMonthChange}%)</span>
               </div>
             </div>
           </div>
@@ -57,7 +75,7 @@ const Home = class extends React.Component {
                 One Year Forecast<a tabIndex="0" id="zestimate-A_18"></a>
               </div>
               <div id="zestimate-forecast-value-container">
-                <span id="zestimate-forecast-value">$12,979,582 <span id="zestimate-forecast-percentage">(+5.6%)</span></span>
+                <span id="zestimate-forecast-value">${this.forecast} <span id="zestimate-forecast-percentage" className={this.lastMonth < 0 ? 'zestimate-percentage-decrease' : 'zestimate-percentage-increase'}>(+{this.forecastChange}%)</span></span>
               </div>
             </div>
           </div>
@@ -73,8 +91,9 @@ const Home = class extends React.Component {
           {this.state.zestimateInside && (
             <ZestimateDetails status={this.props.status} />
           )}
+        {this.state.zestimateInside && <GraphNavbar selected={this.state.selected} handleClick={this.getSelected}/>}
         {this.state.zestimateInside && (
-          <ZestimateChart />
+          <ZestimateChart selected={this.state.selected}/>
         )}
         </div>
     );

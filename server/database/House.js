@@ -1,8 +1,7 @@
 const mongoose = require('mongoose');
 
-
-
 const houseSchema = new mongoose.Schema({
+  _id: String,
   address: String,
   city: String,
   zip: Number,
@@ -12,6 +11,7 @@ const houseSchema = new mongoose.Schema({
   sqFt: Number,
   status: String,
 });
+
 
 const House = mongoose.model('House', houseSchema);
 

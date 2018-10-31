@@ -2,9 +2,13 @@ import React from 'react';
 import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
 
-const GET_HOMES = gql`
-  {
-    allHouses {
+
+
+
+const ComparableHome = (props) => {
+  const GET_HOMES = gql`
+  query getTen($num: [Int]!){
+    getSome(num: $num) {
       address
       beds
       baths
@@ -14,9 +18,15 @@ const GET_HOMES = gql`
     }
   }
   `;
+  const randArr = [];
+  while (randArr.length < 10) {
+    let rand = Math.floor(Math.random() * 100);
+    if (!randArr.includes(rand)) {
+      randArr.push(rand)
+    }
+  }
 
-const ComparableHome = (props) => (
-  <Query query={GET_HOMES}>
+  return (<Query query={GET_HOMES} variables={{num: randArr}}>
     {
       ({ loading, error, data }) => {
       if (loading) {
@@ -25,14 +35,13 @@ const ComparableHome = (props) => (
       if (error) {
         return `Error! ${error.message}`;
       }
-
-      data = data.allHouses.slice(0, 10);
+      data = data.getSome;
       const random = (num) => Math.floor(Math.random() * num);
 
       return data.map((house, idx) => {
           let zestimate = house.zestimate.splice(-1, 1);
           return (
-            <div id="zestimate-DIV_1">
+            <div id="zestimate-DIV_1" key={idx}>
               <a href="/homedetails/7813-140th-Pl-NE-Redmond-WA-98052/49077656_zpid/" id="zestimate-A_2"><img src="https://dev.virtualearth.net/REST/v1/Imagery/Map/Aerial/47.674079,-122.152192/17?mapSize=101,76&amp;key=AmdvKO2hNoyLePakiVzRBZiGPKCxV6MtwWneohoPfmXclTaRTzvT6_Ict5-PBHO6" id="zestimate-IMG_3" alt='' /></a>
               <div id="zestimate-DIV_4">
                 <h5 id="zestimate-H5_5">
@@ -58,7 +67,7 @@ const ComparableHome = (props) => (
         })
 ;
       }}
-  </Query>
-);
+  </Query>);
+};
 
 export default ComparableHome;

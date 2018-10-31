@@ -13,8 +13,10 @@ const typeDefs = `
   }
 
   type Query {
-    allHouses: [Home],
+    allHouses: [Home]
+    getSome(num: [Int]!): [Home]
   }
+  
 `;
 
 const schema = makeExecutableSchema({

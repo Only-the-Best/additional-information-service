@@ -50,7 +50,7 @@ export default class ZestimateDetails extends React.Component {
                 </div>
               </div>
             </section>
-            {this.state.comparableHomes && <ComparableHomes />}
+            {this.state.comparableHomes && <ComparableHomes comparable={this.props.comparable}/>}
             <section
               id="expand-local-sale-prices"
               onClick={this.expandLocalSale}
