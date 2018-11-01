@@ -7,6 +7,7 @@ const resolvers = {
       return await House.find();
     },
     async getSome(dummy, numObj) {
+      console.log(arguments);
       return await House.find({ _id: { $in: numObj.num } });
     },
   },

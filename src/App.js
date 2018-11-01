@@ -53,6 +53,10 @@ export default class App extends React.Component {
 
 export const PreQuery = () => {
   let rand = [Math.floor(Math.random() * 100)];
+  let houseId = Number(window.location.pathname.replace(/\//, ''));
+  if (houseId >= 0 && houseId < 100) {
+    rand = [houseId];
+  }
 
   return (
   <Query query={gql`

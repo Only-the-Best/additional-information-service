@@ -1,6 +1,7 @@
 import { shallow, mount, render } from 'enzyme';
 import React from 'react';
 
+import PreQuery from '../App.js';
 import App from '../App.js';
 import Expenses from '../components/Expenses.js';
 import Home from '../components/Home.js';
@@ -13,7 +14,7 @@ import Schools from '../components/Schools.js';
 describe('<App />', () => {
   let wrapper;
   beforeEach(() => {
-    wrapper = mount(<App />);
+    wrapper = mount(<PreQuery />);
   });
 
   test('it should exist', () => {
@@ -34,7 +35,7 @@ describe('<App />', () => {
 describe('<Expenses />', () => {
   let wrapper;
   beforeEach(() => {
-    wrapper = mount(<App />);
+    wrapper = mount(<PreQuery />);
   });
 
   test('should expand on click', () => {
@@ -53,7 +54,7 @@ describe('<Expenses />', () => {
 describe('<Home />', () => {
   let wrapper;
   beforeEach(() => {
-    wrapper = mount(<App />);
+    wrapper = mount(<PreQuery />);
   });
 
   test('should expand on click', () => {
@@ -80,13 +81,21 @@ describe('<Home />', () => {
     expect(wrapper.find('#zestimate-history-title').length).toBe(0);
   });
 
+  test('clicking the year selector on the graph should change the view', () => {
+    wrapper.find('#home-header').simulate('click');
+    wrapper.find('#zestimate-history-title').simulate('click');
+    expect(wrapper.find('#5-year')).hasClass('selected').toBe(false);
+    wrapper.find('#5-year').simulate('click');
+    expect(wrapper.find('#5-year')).hasClass('selected').toBe(true);
+  });
+
   // change these to components, nest describe blocks?
 });
 
 describe('<Mortgage />', () => {
   let wrapper;
   beforeEach(() => {
-    wrapper = mount(<App />);
+    wrapper = mount(<PreQuery />);
   });
 
   test('should expand on click', () => {
@@ -105,7 +114,7 @@ describe('<Mortgage />', () => {
 describe('<Neighborhood />', () => {
   let wrapper;
   beforeEach(() => {
-    wrapper = mount(<App />);
+    wrapper = mount(<PreQuery />);
   });
 
   test('should expand on click', () => {
@@ -124,7 +133,7 @@ describe('<Neighborhood />', () => {
 describe('<Price />', () => {
   let wrapper;
   beforeEach(() => {
-    wrapper = mount(<App />);
+    wrapper = mount(<PreQuery />);
   });
 
   test('should expand on click', () => {
@@ -143,7 +152,7 @@ describe('<Price />', () => {
 describe('<Schools />', () => {
   let wrapper;
   beforeEach(() => {
-    wrapper = mount(<App />);
+    wrapper = mount(<PreQuery />);
   });
 
   test('should expand on click', () => {

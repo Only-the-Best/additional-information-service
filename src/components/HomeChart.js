@@ -1,15 +1,16 @@
 import React from 'react';
 import {LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, CustomizedLegend} from 'recharts';
-import moment from 'moment';
+
 
 
 export default class HomeChart extends React.Component {
   render() {
+
     return (
       <LineChart width={640} height={450} data={this.props.data}
                  margin={{top: 5, right: 30, left: 20, bottom: 5}}>
         <CartesianGrid/>
-        <XAxis dataKey="name" domain={['auto', 'dataMax + 100000']} scale="time" type='time'/>
+        <XAxis dataKey="name" minTickGap={18}/>
         <YAxis domain={['auto', 'dataMax + 100000']}/>
 
         <Legend layout="vertical" align="left" verticalAlign="top" iconType="line" />

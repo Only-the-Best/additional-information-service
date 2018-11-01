@@ -3,6 +3,7 @@ import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 import HomeChart from './HomeChart.js';
 import { HouseIdContext} from "../App";
+import moment from 'moment';
 
 
 const ZestimateChart = ({selected}) => (
@@ -47,10 +48,16 @@ const ZestimateChart = ({selected}) => (
               rand.unshift(null);
             }
 
+            let tickets = moment().subtract(1, 'months').format('MM/YY');
 
+
+            let count = 1;
+            const monthsArr = Array.from({length: 132}, () => {
+               return moment().subtract(count++, 'months').format('MM/YY');
+            }).reverse();
 
             let formatted = rand.map((zest, idx) => {
-              return { name: 'Put Month Here', 'This House': current[idx], Wakanda: zest, Narnia: dashed[idx] };
+              return { name: monthsArr[Math.floor(idx)], 'This House': current[idx], Wakanda: zest, Narnia: dashed[idx] };
             });
 
             if (selected === 5) {
