@@ -80,7 +80,7 @@ export const PreQuery = () => {
       if (error) {
         return <p>Error :(</p>;
       }
-      return <App current={data} num={rand}/>;
+      return <App current={data} num={rand} />;
     }}
   </Query>
 )};
