@@ -10,8 +10,8 @@ const houseSchema = new mongoose.Schema({
   baths: Number,
   sqFt: Number,
   status: String,
+  taxAssessment: Number,
 });
-
 
 const House = mongoose.model('House', houseSchema);
 

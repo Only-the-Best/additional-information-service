@@ -1,5 +1,5 @@
-import schema from './schema.js';
 import mongoose from 'mongoose';
+import schema from './schema.js';
 
 const cors = require('cors');
 const express = require('express');
@@ -9,18 +9,24 @@ const path = require('path');
 const app = express();
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/houses', { useNewUrlParser: true });
+mongoose.connect(
+  'mongodb://localhost/houses',
+  { useNewUrlParser: true },
+);
 
 app.use(cors());
-app.use(express.static(__dirname + '/../public'));
+app.use(express.static(`${__dirname}/../public`));
 
 app.get('/:urlId', (req, res) => {
   res.sendFile(path.join(`${__dirname}/../public/index.html`));
 });
 
-app.use('/graphql', graphqlHTTP({
-  schema,
-  graphiql: true,
-}));
+app.use(
+  '/graphql',
+  graphqlHTTP({
+    schema,
+    graphiql: true,
+  }),
+);
 
 app.listen(4000, () => console.log('Express GraphQL Server Now Running On localhost:4000/graphql'));

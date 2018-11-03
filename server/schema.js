@@ -10,6 +10,7 @@ const typeDefs = `
     baths: Float!
     sqFt: Int!
     status: String!
+    taxAssessment: Float!
   }
 
   type Query {

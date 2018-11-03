@@ -30,7 +30,7 @@
   transform-origin: 327px 34px;
   border-top: 1px solid rgb(204, 204, 204);
   border-right: 0px none rgb(68, 68, 68);
-  /*border-bottom: 1px solid rgb(204, 204, 204);*/
+  border-bottom: 1px solid rgb(204, 204, 204);
   border-left: 0px none rgb(68, 68, 68);
   margin: 0px;
   padding: 18px 18px 18px 0px;
@@ -212,7 +212,6 @@
   outline: rgb(252, 56, 74) none 0px;
 }
 
-
 .zestimate-percentage-increase {
     color: rgb(3, 192, 74);
     display: inline-block;
@@ -226,7 +225,6 @@
     border: 0px none rgb(3, 192, 74);
     outline: rgb(3, 192, 74) none 0px;
 }
-
 
 #zestimate-forecast-image {
   color: rgb(3, 192, 74);
@@ -326,8 +324,7 @@
     sans-serif;
 }
 
-#expand-comparable-homes,
-#expand-local-sale-prices {
+.expand-subcontainer {
   bottom: 0px;
   height: 52px;
   left: 0px;
@@ -345,8 +342,7 @@
     sans-serif;
 }
 
-#comparable-homes-summary,
-#local-sale-prices-summary {
+.zestimate-detail-summary {
   bottom: 0px;
   cursor: pointer;
   height: 52px;
@@ -366,8 +362,7 @@
   padding: 18px 0px;
 }
 
-#comparable-homes-title-spacing,
-#local-sale-prices-spacing {
+.zestimate-detail-spacing {
   cursor: pointer;
   max-width: calc(-18px + 100%);
   text-overflow: ellipsis;
@@ -379,8 +374,7 @@
   overflow: hidden;
 }
 
-#comparable-homes-title,
-#local-sale-prices-title {
+.zestimate-detail-title {
   cursor: pointer;
   height: 16px;
   white-space: nowrap;
@@ -391,8 +385,7 @@
     sans-serif;
 }
 
-#comparable-homes-label,
-#local-sale-prices-label {
+.zestimate-detail-label {
   cursor: pointer;
   white-space: nowrap;
   perspective-origin: 0px 0px;
@@ -424,7 +417,7 @@
   cursor: pointer;
   display: block;
   height: 16px;
-  left: 514.906px;
+  left: 525px;
   position: absolute;
   right: 0px;
   top: 18px;
@@ -444,13 +437,25 @@
   float: right;
 }
 
-#comparable-homes-container,
-#local-sale-prices-container {
-  height: 1570px;
+.zestimate-subexpand-container {
+  height: 1770px;
+    border-bottom: rgb(68, 68, 68) solid 1px;
+}
+
+#tax-expand-container {
+  height: 1970px;
+}
+
+#market-expand-container {
+    height: 350px;
 }
 
 #home-bottom-spacing {
   height: 100px;
+}
+
+.market-date {
+    font-size: 12px;
 }
 
 #chart-wrapper {
@@ -462,7 +467,11 @@
     margin-top: 15px;
 }
 
-#zestimate-DIV_1 {
+#dollar-per-sqfoot {
+    margin-right: 8px;
+}
+
+.similar-zestimate-container {
   border-bottom-color: rgb(68, 68, 68);
   border-left-color: rgb(68, 68, 68);
   border-right-color: rgb(68, 68, 68);
@@ -505,51 +514,10 @@
   font: normal normal 700 normal 15px / 22.5px Gotham, gotham, Verdana, sans-serif;
   outline: rgb(68, 68, 68) none 0px;
   padding: 20px 0px;
-}/*#zestimate-DIV_1*/
+}
 
 
-#zestimate-A_2 {
-  background-position: 0px 0px;
-  border-bottom-color: rgb(0, 116, 228);
-  border-left-color: rgb(0, 116, 228);
-  border-right-color: rgb(0, 116, 228);
-  border-top-color: rgb(0, 116, 228);
-  box-sizing: border-box;
-  color: rgb(0, 116, 228);
-  display: block;
-  font-family: Gotham, gotham, Verdana, sans-serif;
-  font-size: 15px;
-  font-weight: 300;
-  height: 118px;
-  line-height: 22.5px;
-  min-height: auto;
-  min-width: auto;
-  outline-color: rgb(0, 116, 228);
-  text-decoration: none solid rgb(0, 116, 228);
-  text-decoration-line: none;
-  text-decoration-color: rgb(0, 116, 228);
-  text-size-adjust: 100%;
-  white-space: nowrap;
-  width: 150px;
-  column-rule-color: rgb(0, 116, 228);
-  perspective-origin: 75px 59px;
-  transform-origin: 75px 59px;
-  caret-color: rgb(0, 116, 228);
-  background: rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box;
-  border: 0px none rgb(0, 116, 228);
-  border-top: 0px none rgb(0, 116, 228);
-  border-right: 0px none rgb(0, 116, 228);
-  border-bottom: 0px none rgb(0, 116, 228);
-  border-left: 0px none rgb(0, 116, 228);
-  border-color: rgb(0, 116, 228);
-  font: normal normal 300 normal 15px / 22.5px Gotham, gotham, Verdana, sans-serif;
-  outline: rgb(0, 116, 228) none 0px;
-}/*#zestimate-A_2*/
-
-
-
-
-#zestimate-IMG_3 {
+.zestimate-similar-image {
   background-size: 150px 112px;
   border-bottom-color: rgb(0, 116, 228);
   border-left-color: rgb(0, 116, 228);
@@ -583,12 +551,9 @@
   border-color: rgb(0, 116, 228);
   font: normal normal 300 normal 15px / 22.5px Gotham, gotham, Verdana, sans-serif;
   outline: rgb(0, 116, 228) none 0px;
-}/*#zestimate-IMG_3*/
+}
 
-
-
-
-#zestimate-DIV_4 {
+.zestimate-similar-info-container {
   border-bottom-color: rgb(68, 68, 68);
   border-left-color: rgb(68, 68, 68);
   border-right-color: rgb(68, 68, 68);
@@ -622,10 +587,9 @@
   font: normal normal 700 normal 15px / 22.5px Gotham, gotham, Verdana, sans-serif;
   outline: rgb(68, 68, 68) none 0px;
   padding: 0px 0px 0px 15px;
-}/*#zestimate-DIV_4*/
+}
 
-
-#zestimate-H5_5 {
+.zestimate-similar-status-header {
   border-bottom-color: rgb(68, 68, 68);
   border-left-color: rgb(68, 68, 68);
   border-right-color: rgb(68, 68, 68);
@@ -657,12 +621,9 @@
   font: normal normal 700 normal 13px / 15px Gotham, gotham, Verdana, sans-serif;
   margin: 0px 0px 15px;
   outline: rgb(68, 68, 68) none 0px;
-}/*#zestimate-H5_5*/
+}
 
-
-
-
-#zestimate-DIV_6 {
+.zestimate-similar-status-div {
   border-bottom-color: rgb(68, 68, 68);
   border-left-color: rgb(68, 68, 68);
   border-right-color: rgb(68, 68, 68);
@@ -692,12 +653,9 @@
   border-color: rgb(68, 68, 68);
   font: normal normal 700 normal 13px / 15px Gotham, gotham, Verdana, sans-serif;
   outline: rgb(68, 68, 68) none 0px;
-}/*#zestimate-DIV_6*/
+}
 
-
-
-
-#zestimate-SPAN_7 {
+.zestimate-similar-status-icon {
   border-bottom-color: rgb(68, 68, 68);
   border-left-color: rgb(68, 68, 68);
   border-right-color: rgb(68, 68, 68);
@@ -729,11 +687,9 @@
   font: normal normal 700 normal 10px / 10px Gotham, gotham, Verdana, sans-serif;
   outline: rgb(68, 68, 68) none 0px;
   padding: 0px 10px 0px 5px;
-}/*#zestimate-SPAN_7*/
+}
 
-
-
-#zestimate-DIV_8 {
+.zestimate-similar-zestimate {
   border-bottom-color: rgb(68, 68, 68);
   border-left-color: rgb(68, 68, 68);
   border-right-color: rgb(68, 68, 68);
@@ -764,11 +720,9 @@
   font: normal normal 400 normal 28px / 40px Gotham, gotham, Verdana, sans-serif;
   margin: -15px 0px 0px;
   outline: rgb(68, 68, 68) none 0px;
-}/*#zestimate-DIV_8*/
+}
 
-
-
-#zestimate-DIV_9, #zestimate-DIV_10 {
+.zestimate-similar-stats-container, .zestimate-similar-stats-info {
   border-bottom-color: rgb(68, 68, 68);
   border-left-color: rgb(68, 68, 68);
   border-right-color: rgb(68, 68, 68);
@@ -798,10 +752,9 @@
   border-color: rgb(68, 68, 68);
   font: normal normal 700 normal 15px / 20px Gotham, gotham, Verdana, sans-serif;
   outline: rgb(68, 68, 68) none 0px;
-}/*#zestimate-DIV_9, #zestimate-DIV_10*/
+}
 
-
-#zestimate-A_11 {
+.zestimate-similar-address-link {
   background-position: 0px 0px;
   border-bottom-color: rgb(0, 116, 228);
   border-left-color: rgb(0, 116, 228);
@@ -831,11 +784,9 @@
   border-color: rgb(0, 116, 228);
   font: normal normal 400 normal 15px / 20px Gotham, gotham, Verdana, sans-serif;
   outline: rgb(0, 116, 228) none 0px;
-}/*#zestimate-A_11*/
+}
 
-
-
-#zestimate-H3_12 {
+.zestimate-similar-proportional-stat{
   border-bottom-color: rgb(68, 68, 68);
   border-left-color: rgb(68, 68, 68);
   border-right-color: rgb(68, 68, 68);
@@ -847,7 +798,7 @@
   font-size: 20px;
   font-weight: 400;
   height: 15px;
-  left: 604.312px;
+  left: 595px;
   line-height: 15px;
   margin-bottom: 15px;
   margin-top: 25px;
@@ -859,7 +810,7 @@
   text-size-adjust: 100%;
   top: 20px;
   white-space: nowrap;
-  width: 49.6875px;
+  width: 60px;
   column-rule-color: rgb(68, 68, 68);
   perspective-origin: 24.8438px 7.5px;
   transform-origin: 24.8438px 7.5px;
@@ -873,7 +824,7 @@
   font: normal normal 400 normal 20px / 15px Gotham, gotham, Verdana, sans-serif;
   margin: 25px 0px 15px;
   outline: rgb(68, 68, 68) none 0px;
-}/*#zestimate-H3_12*/
+}
 
 #zestimate-graph-toolbar {
   margin-top: 20px;
@@ -900,4 +851,171 @@
 .selected {
   border-bottom: solid royalblue;
   margin-top: 3px;
+}
+
+.zestimate-subexpand-explanation-container {
+    font-size: 15px;
+    font-weight: 700;
+    height: 110px;
+    line-height: 22.5px;
+    width: 654px;
+    perspective-origin: 327px 55px;
+    transform-origin: 327px 55px;
+}
+
+/*#comparable-explanation {*/
+    /*font-size: 15px;*/
+    /*height: 110px;*/
+    /*line-height: 22.5px;*/
+    /*width: 654px;*/
+    /*perspective-origin: 327px 55px;*/
+    /*transform-origin: 327px 55px*/
+    /*font: normal normal 400 normal 15px / 22.5px Gotham, gotham, Verdana, sans-serif;*/
+/*}*/
+
+.zestimate-subdetail-title-name {
+    float: left;
+}
+
+.zestimate-subdetail-value-name{
+    float: right;
+    text-align: right;
+}
+
+.zestimate-subdetail-heading-container {
+    font-size: 13px;
+}
+
+#local-sale-container {
+  height: 1770px;
+  text-size-adjust: 100%;
+  width: 654px;
+  perspective-origin: 327px 44px;
+  transform-origin: 327px 44px;
+  font: normal normal 700 normal 15px / 22.5px Gotham, gotham, Verdana, sans-serif;
+}
+
+.zestimate-subexpand-explanation {
+  height: 88px;
+  text-size-adjust: 100%;
+  width: 654px;
+  perspective-origin: 327px 44px;
+  transform-origin: 327px 44px;
+  font: normal normal 400 normal 15px / 22.5px Gotham, gotham, Verdana, sans-serif;
+}
+
+#local-sale-descriptionSPAN_4, #local-sale-descriptionSPAN_5 {
+  text-size-adjust: 100%;
+  perspective-origin: 0px 0px;
+  transform-origin: 0px 0px;
+  font: normal normal 400 normal 15px / 22.5px Gotham, gotham, Verdana, sans-serif;
+}
+
+.zestimate-accuracy-link {
+  background-position: 0px 0px;
+  color: rgb(0, 116, 228);
+  text-decoration: none solid rgb(0, 116, 228);
+  text-size-adjust: 100%;
+  column-rule-color: rgb(0, 116, 228);
+  perspective-origin: 0px 0px;
+  transform-origin: 0px 0px;
+  caret-color: rgb(0, 116, 228);
+  background: rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box;
+  border: 0px none rgb(0, 116, 228);
+  font: normal normal 300 normal 15px / 22.5px Gotham, gotham, Verdana, sans-serif;
+  outline: rgb(0, 116, 228) none 0px;
+}
+
+.zestimate-compare-container {
+  height: 193px;
+  width: 654px;
+  perspective-origin: 327px 96.5px;
+  transform-origin: 327px 96.5px;
+  font: normal normal 400 normal 15px / 22.5px Gotham, gotham, Verdana, sans-serif;
+  padding: 20px 0px 0px;
+}
+
+.how-calculated-header {
+  height: 19px;
+  width: 654px;
+  perspective-origin: 327px 9.5px;
+  transform-origin: 327px 9.5px;
+  font: normal normal 800 normal 13px / 19.5px Gotham, gotham, Verdana, sans-serif;
+  margin: 0px 0px 15px;
+}
+
+.zestimate-compare-before {
+  bottom: 0px;
+  height: 139px;
+  left: 0px;
+  position: relative;
+  right: 0px;
+  top: 0px;
+  width: 654px;
+  perspective-origin: 327px 69.5px;
+  transform-origin: 327px 69.5px;
+  font: normal normal 100 normal 15px / 22.5px Gotham, gotham, Verdana, sans-serif;
+  padding: 30px 0px 0px;
+}
+
+.zestimate-compare-value, .zestimate-compare-value-after{
+  display: inline-block;
+  height: 58px;
+  text-align: center;
+  vertical-align: top;
+  width: 196.188px;
+  perspective-origin: 98.0938px 29px;
+  transform-origin: 98.0938px 29px;
+  font: normal normal 100 normal 20px / 30px Gotham, gotham, Verdana, sans-serif;
+  margin: 0px 0px 15px;
+}
+
+.zestimate-compare-before-title, .zestimate-compare-after {
+  display: block;
+  height: 18px;
+  text-align: center;
+  width: 196.188px;
+  perspective-origin: 98.0938px 9px;
+  transform-origin: 98.0938px 9px;
+  font: normal normal 100 normal 12px / 18px Gotham, gotham, Verdana, sans-serif;
+  margin: 10px 0px 0px;
+}
+
+.compare-symbol {
+  display: inline-block;
+  height: 30px;
+  text-align: center;
+  vertical-align: top;
+  width: 32.6875px;
+  perspective-origin: 16.3438px 15px;
+  transform-origin: 16.3438px 15px;
+  font: normal normal 100 normal 20px / 30px Gotham, gotham, Verdana, sans-serif;
+  margin: 0px 0px 15px;
+}
+
+.zestimate-compare-percent {
+  display: inline-block;
+  height: 94px;
+  text-align: center;
+  vertical-align: top;
+  width: 196.188px;
+  perspective-origin: 98.0938px 47px;
+  transform-origin: 98.0938px 47px;
+  font: normal normal 100 normal 20px / 30px Gotham, gotham, Verdana, sans-serif;
+  margin: 0px 0px 15px;
+}
+
+.zestimate-compare-percent-value {
+  display: block;
+  height: 54px;
+  text-align: center;
+  width: 196.188px;
+  perspective-origin: 98.0938px 27px;
+  transform-origin: 98.0938px 27px;
+  font: normal normal 100 normal 12px / 18px Gotham, gotham, Verdana, sans-serif;
+  margin: 10px 0px 0px;
+}
+
+.tax-assessment {
+    left: 560px;
 }
