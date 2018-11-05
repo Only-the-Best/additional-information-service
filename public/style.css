@@ -3,36 +3,22 @@
   display: flex;
   color: rgb(68, 68, 68);
   /*height: 315px;*/
-  text-decoration: none solid rgb(68, 68, 68);
   width: 654px;
   column-rule-color: rgb(68, 68, 68);
-  perspective-origin: 327px 157.5px;
-  transform-origin: 327px 157.5px;
-  border: 0px none rgb(68, 68, 68);
   font: normal normal 400 normal 15px / 22.5px Gotham, gotham, Verdana,
-    sans-serif;
-  outline: rgb(68, 68, 68) none 0px;
+  sans-serif;
 }
 
 .header-toggle {
-  bottom: 0px;
   cursor: pointer;
   /*height: 68px;*/
-  left: 0px;
   position: relative;
-  right: 0px;
-  top: 0px;
   width: 654px;
   z-index: 1;
   /*align-items: center;*/
   /*justify-content: space-between;*/
-  perspective-origin: 327px 34px;
-  transform-origin: 327px 34px;
   border-top: 1px solid rgb(204, 204, 204);
-  border-right: 0px none rgb(68, 68, 68);
   border-bottom: 1px solid rgb(204, 204, 204);
-  border-left: 0px none rgb(68, 68, 68);
-  margin: 0px;
   padding: 18px 18px 18px 0px;
 }
 
@@ -46,36 +32,22 @@
   float: right;
 }
 
-.map {
-  height: 380px;
-  width: auto;
-}
 #home-banner-container {
-  background-position: 100% 100%;
   display: inline-flex;
   height: 180px;
   width: 654px;
   align-items: center;
-  perspective-origin: 327px 90px;
-  transform-origin: 327px 90px;
   background: rgb(226, 239, 252) url('/zillow-robot.png') no-repeat scroll 100%
-    100% / 180px padding-box border-box;
+  100% / 180px padding-box border-box;
 }
 
 #home-banner-text {
   width: 444px;
-  perspective-origin: 222px 45px;
-  transform-origin: 222px 45px;
 }
 
-
 #zestimate-detail-container {
-  box-sizing: border-box;
-  height: 108px;
   text-align: center;
   width: 654px;
-  perspective-origin: 327px 54px;
-  transform-origin: 327px 54px;
 }
 
 #zestimate-range-container,
@@ -85,38 +57,20 @@
   height: 107.578px;
   vertical-align: top;
   width: 217.984px;
-  perspective-origin: 108.984px 53.7812px;
-  transform-origin: 108.984px 53.7812px;
   padding: 0px 10px;
 }
 
 #zestimate-range-image-container {
-  color: rgb(3, 192, 74);
   display: block;
   height: 56px;
-  text-decoration: none solid rgb(3, 192, 74);
-  vertical-align: middle;
-  width: 56px;
-  column-rule-color: rgb(3, 192, 74);
-  perspective-origin: 28px 28px;
-  transform-origin: 28px 28px;
-  caret-color: rgb(3, 192, 74);
   background: rgba(0, 0, 0, 0)
-    url('data:image/svg+xml,%3Csvg%20width%3D%2256%22%20height%3D%2256%22%20viewBox%3D%220%200%2056%2056%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%3Ctitle%3EZestimate_Range%3C%2Ftitle%3E%3Cdefs%3E%3Cellipse%20id%3D%22a%22%20cx%3D%2228%22%20cy%3D%2228%22%20rx%3D%2228%22%20ry%3D%2228%22%2F%3E%3Cmask%20id%3D%22c%22%20x%3D%220%22%20y%3D%220%22%20width%3D%2256%22%20height%3D%2256%22%20fill%3D%22%23fff%22%3E%3Cuse%20xlink%3Ahref%3D%22%23a%22%2F%3E%3C%2Fmask%3E%3Cpath%20d%3D%22M23.804%2013.501v10.511c0%20.648-.325%201.512-1.513%201.512h-5.94V14.762h-5.94v10.762H4.47c-1.188%200-1.512-.864-1.512-1.512v-10.51H.58c-.864%200-.648-.433-.108-1.08L12.354.431c.324-.324.649-.432%201.08-.432.433%200%20.757.216%201.08.432l11.882%2011.99c.648.647.864%201.08-.108%201.08h-2.484z%22%20id%3D%22b%22%2F%3E%3Cmask%20id%3D%22d%22%20x%3D%220%22%20y%3D%220%22%20width%3D%2226.95%22%20height%3D%2225.524%22%20fill%3D%22%23fff%22%3E%3Cuse%20xlink%3Ahref%3D%22%23b%22%2F%3E%3C%2Fmask%3E%3C%2Fdefs%3E%3Cg%20stroke%3D%22%230074E4%22%20stroke-width%3D%222%22%20fill%3D%22%23FFF%22%20fill-rule%3D%22evenodd%22%3E%3Cuse%20mask%3D%22url(%23c)%22%20xlink%3Ahref%3D%22%23a%22%2F%3E%3Cuse%20mask%3D%22url(%23d)%22%20xlink%3Ahref%3D%22%23b%22%20transform%3D%22translate(15%2015)%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E')
-    repeat scroll 0% 0% / 56px 56px padding-box border-box;
-  border: 0px none rgb(3, 192, 74);
-  font: normal normal 400 normal 30px / 45px Gotham, gotham, Verdana, sans-serif;
+  url('/zestimate-house-icon.svg')
+  repeat scroll 0% 0% / 56px 56px padding-box border-box;
   margin: 0px 71px 0px 70.9844px;
-  outline: rgb(3, 192, 74) none 0px;
 }
 
 #zestimate-range-title-container,
 #zestimate-forecast-image-container {
-  height: 51.5781px;
-  vertical-align: middle;
-  width: 197.984px;
-  perspective-origin: 98.9844px 25.7812px;
-  transform-origin: 98.9844px 25.7812px;
   padding: 10px 0px 0px 5px;
 }
 
@@ -125,19 +79,14 @@
   height: 19.5781px;
   text-transform: uppercase;
   width: 192.984px;
-  perspective-origin: 96.4844px 9.78125px;
-  transform-origin: 96.4844px 9.78125px;
   font: normal normal 700 normal 13px / 19.5px Gotham, gotham, Verdana,
-    sans-serif;
+  sans-serif;
 }
-
 
 #zestimate-range-value {
   display: inline-block;
   height: 22px;
   width: 130.266px;
-  perspective-origin: 65.125px 11px;
-  transform-origin: 65.125px 11px;
 }
 
 #zestimate-change-container {
@@ -146,37 +95,31 @@
   height: 107px;
   vertical-align: top;
   width: 217.984px;
-  perspective-origin: 108.984px 53.5px;
-  transform-origin: 108.984px 53.5px;
   padding: 0px 10px;
 }
 
 #zestimate-change-image-container {
-  color: rgb(3, 192, 74);
   display: block;
   height: 56px;
-  text-decoration: none solid rgb(3, 192, 74);
-  vertical-align: middle;
-  width: 56px;
-  column-rule-color: rgb(3, 192, 74);
-  perspective-origin: 28px 28px;
-  transform-origin: 28px 28px;
-  caret-color: rgb(3, 192, 74);
-  background: rgba(0, 0, 0, 0)
-    url('data:image/svg+xml,%3Csvg%20width%3D%2256%22%20height%3D%2256%22%20viewBox%3D%220%200%2056%2056%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%3Ctitle%3E30_Days_Down%3C%2Ftitle%3E%3Cdefs%3E%3Cellipse%20id%3D%22a%22%20cx%3D%2228%22%20cy%3D%2228%22%20rx%3D%2228%22%20ry%3D%2228%22%2F%3E%3Cmask%20id%3D%22c%22%20x%3D%220%22%20y%3D%220%22%20width%3D%2256%22%20height%3D%2256%22%20fill%3D%22%23fff%22%3E%3Cuse%20xlink%3Ahref%3D%22%23a%22%2F%3E%3C%2Fmask%3E%3Cpath%20d%3D%22M28.706%2013.765L16.47%201.529C16%201.06%2015.41.824%2014.706.824c-.706%200-1.294.235-1.647.705L.706%2013.765c-.47.47-.706%201.059-.706%201.764%200%20.706.235%201.177.706%201.647l1.412%201.412c.47.47%201.058.706%201.647.706.706%200%201.294-.235%201.647-.706l5.53-5.53v13.295c0%20.706.234%201.176.705%201.647a2.89%202.89%200%200%200%201.765.588h2.47A2.89%202.89%200%200%200%2017.647%2028c.47-.353.706-.941.706-1.647V13.059l5.53%205.53c.47.47%201.058.705%201.646.705.706%200%201.295-.235%201.765-.706l1.412-1.412c.47-.47.706-1.058.706-1.647%200-.705-.236-1.294-.706-1.764z%22%20id%3D%22b%22%2F%3E%3Cmask%20id%3D%22d%22%20x%3D%220%22%20y%3D%220%22%20width%3D%2229.412%22%20height%3D%2227.765%22%20fill%3D%22%23fff%22%3E%3Cuse%20xlink%3Ahref%3D%22%23b%22%2F%3E%3C%2Fmask%3E%3C%2Fdefs%3E%3Cg%20stroke%3D%22%230074E4%22%20stroke-width%3D%222%22%20fill%3D%22%23FFF%22%20fill-rule%3D%22evenodd%22%3E%3Cuse%20mask%3D%22url(%23c)%22%20xlink%3Ahref%3D%22%23a%22%2F%3E%3Cuse%20mask%3D%22url(%23d)%22%20xlink%3Ahref%3D%22%23b%22%20transform%3D%22matrix(1%200%200%20-1%2013%2043)%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E')
-    repeat scroll 0% 0% / 56px 56px padding-box border-box;
-  border: 0px none rgb(3, 192, 74);
-  font: normal normal 400 normal 30px / 45px Gotham, gotham, Verdana, sans-serif;
   margin: 0px 71px 0px 70.9844px;
-  outline: rgb(3, 192, 74) none 0px;
+}
+
+.zestimate-change-down {
+  background: rgba(0, 0, 0, 0)
+  url('/zestimate-down-icon.svg')
+  repeat scroll 0% 0% / 56px 56px padding-box border-box;
+}
+
+.zestimate-change-up {
+  background: rgba(0, 0, 0, 0)
+  url('/zestimate-up-icon.svg')
+  repeat scroll 0% 0% / 56px 56px padding-box border-box;
 }
 
 #zestimate-change-title-container {
   height: 51px;
   vertical-align: middle;
   width: 197.984px;
-  perspective-origin: 98.9844px 25.5px;
-  transform-origin: 98.9844px 25.5px;
   padding: 10px 0px 0px 5px;
 }
 
@@ -184,79 +127,50 @@
   height: 19px;
   text-transform: uppercase;
   width: 192.984px;
-  perspective-origin: 96.4844px 9.5px;
-  transform-origin: 96.4844px 9.5px;
   font: normal normal 700 normal 13px / 19.5px Gotham, gotham, Verdana,
-    sans-serif;
+  sans-serif;
 }
 
 #zestimate-change-value {
   display: inline-block;
   height: 22px;
   width: 127.516px;
-  perspective-origin: 63.75px 11px;
-  transform-origin: 63.75px 11px;
 }
 
 .zestimate-percentage-decrease {
   color: rgb(252, 56, 74);
   display: inline-block;
   height: 22px;
-  text-decoration: none solid rgb(252, 56, 74);
   width: 55.8125px;
   column-rule-color: rgb(252, 56, 74);
-  perspective-origin: 27.9062px 11px;
-  transform-origin: 27.9062px 11px;
-  caret-color: rgb(252, 56, 74);
-  border: 0px none rgb(252, 56, 74);
-  outline: rgb(252, 56, 74) none 0px;
 }
 
 .zestimate-percentage-increase {
-    color: rgb(3, 192, 74);
-    display: inline-block;
-    height: 22px;
-    text-decoration: none solid rgb(3, 192, 74);
-    width: 57.4688px;
-    column-rule-color: rgb(3, 192, 74);
-    perspective-origin: 28.7344px 11px;
-    transform-origin: 28.7344px 11px;
-    caret-color: rgb(3, 192, 74);
-    border: 0px none rgb(3, 192, 74);
-    outline: rgb(3, 192, 74) none 0px;
+  color: rgb(3, 192, 74);
+  display: inline-block;
+  height: 22px;
+  width: 57.4688px;
+  column-rule-color: rgb(3, 192, 74);
 }
 
 #zestimate-forecast-image {
-  color: rgb(3, 192, 74);
   display: block;
   height: 56px;
-  text-decoration: none solid rgb(3, 192, 74);
-  vertical-align: middle;
-  width: 56px;
-  column-rule-color: rgb(3, 192, 74);
-  perspective-origin: 28px 28px;
-  transform-origin: 28px 28px;
-  caret-color: rgb(3, 192, 74);
   background: rgba(0, 0, 0, 0)
-    url('data:image/svg+xml,%3Csvg%20width%3D%2256%22%20height%3D%2256%22%20viewBox%3D%220%200%2056%2056%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%3Ctitle%3EZestimate_Forecast%3C%2Ftitle%3E%3Cdefs%3E%3Cellipse%20id%3D%22a%22%20cx%3D%2228%22%20cy%3D%2228%22%20rx%3D%2228%22%20ry%3D%2228%22%2F%3E%3Cmask%20id%3D%22c%22%20x%3D%220%22%20y%3D%220%22%20width%3D%2256%22%20height%3D%2256%22%20fill%3D%22%23fff%22%3E%3Cuse%20xlink%3Ahref%3D%22%23a%22%2F%3E%3C%2Fmask%3E%3Crect%20id%3D%22b%22%20x%3D%2215.5%22%20y%3D%2218.5%22%20width%3D%2225%22%20height%3D%2219%22%20rx%3D%222%22%2F%3E%3Cmask%20id%3D%22d%22%20x%3D%220%22%20y%3D%220%22%20width%3D%2225%22%20height%3D%2219%22%20fill%3D%22%23fff%22%3E%3Cuse%20xlink%3Ahref%3D%22%23b%22%2F%3E%3C%2Fmask%3E%3C%2Fdefs%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cuse%20stroke%3D%22%230074E4%22%20mask%3D%22url(%23c)%22%20stroke-width%3D%222%22%20fill%3D%22%23FFF%22%20xlink%3Ahref%3D%22%23a%22%2F%3E%3Cpath%20d%3D%22M20%2033.2c-.1%200-.2%200-.3-.1-.3-.2-.4-.6-.2-.8l2.6-3.9c.1-.2.3-.2.5-.3.2%200%20.4.1.5.3l1.9%203%203-5.8c.1-.2.3-.3.6-.3.2%200%20.4.2.5.4l2.3%205.6%204.1-8.2c.2-.3.5-.4.8-.3.3.2.4.5.3.8l-4.8%209.2c-.1.2-.3.3-.6.3-.2%200-.4-.2-.5-.4l-2.3-5.6-2.9%205.6c-.1.2-.3.3-.5.3s-.4-.1-.5-.3l-2-3.1-2%203.3c-.1.2-.3.3-.5.3z%22%20fill%3D%22%230074E4%22%2F%3E%3Cuse%20stroke%3D%22%230074E4%22%20mask%3D%22url(%23d)%22%20stroke-width%3D%222%22%20xlink%3Ahref%3D%22%23b%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E')
-    repeat scroll 0% 0% / 56px 56px padding-box border-box;
-  border: 0px none rgb(3, 192, 74);
-  font: normal normal 400 normal 30px / 45px Gotham, gotham, Verdana, sans-serif;
+  url('/zestimate-forecast-icon.svg')
+  repeat scroll 0% 0% / 56px 56px padding-box border-box;
   margin: 0px 71px 0px 70.9844px;
-  outline: rgb(3, 192, 74) none 0px;
 }
 
 #zestimate-forecast-value-container,
 #zestimate-forecast-value {
   display: inline-block;
   height: 22px;
-  width: 148.5px;
-  perspective-origin: 74.25px 11px;
-  transform-origin: 74.25px 11px;
+  width: 149px;
 }
 
 #zestimate-forecast-value {
-    font: normal normal 400 normal 15px / 22.5px Gotham, gotham, Verdana, sans-serif;
+  font: normal normal 400 normal 15px / 22.5px Gotham, gotham, Verdana, sans-serif;
 }
 
 #zestimate-history-container {
@@ -273,161 +187,72 @@
 }
 
 #expand-zestimate-details-container {
-  height: 274px;
-}
-
-#inside-zestimate-summary-container {
-  height: 274px;
-  width: 654px;
-  perspective-origin: 327px 137px;
-  transform-origin: 327px 137px;
-  font: normal normal 400 normal 15px / 22.5px Gotham, gotham, Verdana,
-    sans-serif;
-  margin: 0px 0px 40px;
+  height: auto;
 }
 
 #inside-zestimate-title {
-  height: 30px;
-  width: 654px;
-  perspective-origin: 327px 15px;
-  transform-origin: 327px 15px;
-  margin: 0px 0px 15px;
   font: normal normal 700 normal 20px / 30px Gotham, gotham, Verdana, sans-serif;
 }
 
-#inside-zestimate-description {
-  height: 66px;
-  width: 654px;
-  perspective-origin: 327px 33px;
-  transform-origin: 327px 33px;
-  font: normal normal 400 normal 15px / 22.5px Gotham, gotham, Verdana,
-    sans-serif;
-}
 
 #estimate-based-on-title {
   height: 19px;
   text-transform: uppercase;
   width: 654px;
-  perspective-origin: 327px 9.5px;
-  transform-origin: 327px 9.5px;
   font: normal normal 700 normal 13px / 19.5px Gotham, gotham, Verdana,
-    sans-serif;
+  sans-serif;
   margin: 40px 0px 0px;
 }
 
 #zestimate-subcat-container {
-  height: 104px;
+  height: auto;
   width: 654px;
-  perspective-origin: 327px 52px;
-  transform-origin: 327px 52px;
   font: normal normal 400 normal 15px / 22.5px Gotham, gotham, Verdana,
-    sans-serif;
+  sans-serif;
 }
 
 .expand-subcontainer {
-  bottom: 0px;
   height: 52px;
-  left: 0px;
   position: relative;
-  right: 0px;
-  top: 0px;
   width: 654px;
-  perspective-origin: 327px 26px;
-  transform-origin: 327px 26px;
-  border-top: 0px none rgb(68, 68, 68);
-  border-right: 0px none rgb(68, 68, 68);
   border-bottom: 1px solid rgb(170, 170, 170);
-  border-left: 0px none rgb(68, 68, 68);
   font: normal normal 400 normal 15px / 22.5px Gotham, gotham, Verdana,
-    sans-serif;
+  sans-serif;
 }
 
 .zestimate-detail-summary {
-  bottom: 0px;
   cursor: pointer;
-  height: 52px;
-  left: 0px;
-  position: relative;
-  right: 0px;
-  top: 0px;
-  width: 654px;
-  z-index: 1;
-  align-items: center;
-  justify-content: space-between;
-  perspective-origin: 327px 26px;
-  transform-origin: 327px 26px;
-  font: normal normal 700 normal 15px / 15px Gotham, gotham, Verdana, sans-serif;
-  margin: 0px 0px -1px;
-
   padding: 18px 0px;
 }
 
 .zestimate-detail-spacing {
   cursor: pointer;
-  max-width: calc(-18px + 100%);
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  perspective-origin: 0px 0px;
-  transform-origin: 0px 0px;
-  font: normal normal 700 normal 15px / 16.5px Gotham, gotham, Verdana,
-    sans-serif;
-  overflow: hidden;
 }
 
 .zestimate-detail-title {
   cursor: pointer;
-  height: 16px;
-  white-space: nowrap;
-  width: 654px;
-  perspective-origin: 327px 8px;
-  transform-origin: 327px 8px;
   font: normal normal 700 normal 15px / 16.5px Gotham, gotham, Verdana,
-    sans-serif;
+  sans-serif;
 }
 
 .zestimate-detail-label {
   cursor: pointer;
-  white-space: nowrap;
-  perspective-origin: 0px 0px;
-  transform-origin: 0px 0px;
   font: normal normal 700 normal 15px / 16.5px Gotham, gotham, Verdana,
-    sans-serif;
+  sans-serif;
 }
 
 #comparable-homes-average {
   bottom: 18px;
   cursor: pointer;
-  display: block;
-  height: 16px;
   left: 525.172px;
   position: absolute;
-  right: 0px;
-  top: 18px;
-  white-space: nowrap;
-  width: 78.8281px;
-  perspective-origin: 39.4062px 8px;
-  transform-origin: 39.4062px 8px;
-  font: normal normal 700 normal 15px / 16.5px Gotham, gotham, Verdana,
-    sans-serif;
-  margin: 0px 30px 0px 0px;
 }
 
 #local-sale-prices-average {
   bottom: 18px;
   cursor: pointer;
-  display: block;
-  height: 16px;
   left: 525px;
   position: absolute;
-  right: 0px;
-  top: 18px;
-  white-space: nowrap;
-  width: 87.0938px;
-  perspective-origin: 43.5469px 8px;
-  transform-origin: 43.5469px 8px;
-  font: normal normal 700 normal 15px / 16.5px Gotham, gotham, Verdana,
-    sans-serif;
-  margin: 0px 30px 0px 0px;
 }
 
 .zest-chev {
@@ -439,7 +264,7 @@
 
 .zestimate-subexpand-container {
   height: 1770px;
-    border-bottom: rgb(68, 68, 68) solid 1px;
+  border-bottom: rgb(68, 68, 68) solid 1px;
 }
 
 #tax-expand-container {
@@ -447,7 +272,7 @@
 }
 
 #market-expand-container {
-    height: 350px;
+  height: 350px;
 }
 
 #home-bottom-spacing {
@@ -455,7 +280,7 @@
 }
 
 .market-date {
-    font-size: 12px;
+  font-size: 12px;
 }
 
 #chart-wrapper {
@@ -464,366 +289,66 @@
 }
 
 .recharts-surface {
-    margin-top: 15px;
+  margin-top: 15px;
 }
 
 #dollar-per-sqfoot {
-    margin-right: 8px;
+  margin-right: 8px;
 }
 
 .similar-zestimate-container {
-  border-bottom-color: rgb(68, 68, 68);
-  border-left-color: rgb(68, 68, 68);
-  border-right-color: rgb(68, 68, 68);
-  border-top-color: rgb(238, 238, 238);
-  border-top-style: solid;
-  border-top-width: 1px;
-  bottom: 0px;
   box-sizing: border-box;
-  color: rgb(68, 68, 68);
   display: flex;
-  font-family: Gotham, gotham, Verdana, sans-serif;
-  font-size: 15px;
-  font-weight: 700;
-  height: 159px;
-  left: 0px;
-  line-height: 22.5px;
-  outline-color: rgb(68, 68, 68);
-  padding-bottom: 20px;
-  padding-top: 20px;
   position: relative;
-  right: 0px;
-  text-decoration: none solid rgb(68, 68, 68);
-  text-decoration-color: rgb(68, 68, 68);
-  text-size-adjust: 100%;
-  top: 0px;
-  white-space: nowrap;
   width: 654px;
-  column-rule-color: rgb(68, 68, 68);
-  perspective-origin: 327px 79.5px;
-  transform-origin: 327px 79.5px;
-  caret-color: rgb(68, 68, 68);
-  border: ;
-  border-top: 1px solid rgb(238, 238, 238);
-  border-right: 0px none rgb(68, 68, 68);
-  border-bottom: 0px none rgb(68, 68, 68);
-  border-left: 0px none rgb(68, 68, 68);
-  border-width: 1px 0px 0px;
-  border-color: rgb(238, 238, 238) rgb(68, 68, 68) rgb(68, 68, 68);
-  border-style: solid none none;
-  font: normal normal 700 normal 15px / 22.5px Gotham, gotham, Verdana, sans-serif;
-  outline: rgb(68, 68, 68) none 0px;
   padding: 20px 0px;
 }
 
-
 .zestimate-similar-image {
-  background-size: 150px 112px;
-  border-bottom-color: rgb(0, 116, 228);
-  border-left-color: rgb(0, 116, 228);
-  border-right-color: rgb(0, 116, 228);
-  border-top-color: rgb(0, 116, 228);
-  box-sizing: border-box;
-  color: rgb(0, 116, 228);
   cursor: pointer;
-  display: inline-block;
-  font-family: Gotham, gotham, Verdana, sans-serif;
-  font-size: 15px;
-  font-weight: 300;
   height: 112px;
-  line-height: 22.5px;
-  outline-color: rgb(0, 116, 228);
-  text-decoration: none solid rgb(0, 116, 228);
-  text-decoration-color: rgb(0, 116, 228);
-  text-size-adjust: 100%;
-  white-space: nowrap;
   width: 150px;
-  column-rule-color: rgb(0, 116, 228);
-  perspective-origin: 75px 56px;
-  transform-origin: 75px 56px;
-  caret-color: rgb(0, 116, 228);
-  background: rgba(0, 0, 0, 0) none repeat scroll 0% 0% / 150px 112px padding-box border-box;
-  border: 0px none rgb(0, 116, 228);
-  border-top: 0px none rgb(0, 116, 228);
-  border-right: 0px none rgb(0, 116, 228);
-  border-bottom: 0px none rgb(0, 116, 228);
-  border-left: 0px none rgb(0, 116, 228);
-  border-color: rgb(0, 116, 228);
-  font: normal normal 300 normal 15px / 22.5px Gotham, gotham, Verdana, sans-serif;
-  outline: rgb(0, 116, 228) none 0px;
 }
 
 .zestimate-similar-info-container {
-  border-bottom-color: rgb(68, 68, 68);
-  border-left-color: rgb(68, 68, 68);
-  border-right-color: rgb(68, 68, 68);
-  border-top-color: rgb(68, 68, 68);
-  box-sizing: border-box;
-  color: rgb(68, 68, 68);
-  font-family: Gotham, gotham, Verdana, sans-serif;
-  font-size: 15px;
-  font-weight: 700;
-  height: 118px;
-  line-height: 22.5px;
-  min-height: auto;
-  min-width: auto;
-  outline-color: rgb(68, 68, 68);
-  padding-left: 15px;
-  text-decoration: none solid rgb(68, 68, 68);
-  text-decoration-color: rgb(68, 68, 68);
-  text-size-adjust: 100%;
-  white-space: nowrap;
-  width: 217.516px;
-  column-rule-color: rgb(68, 68, 68);
-  perspective-origin: 108.75px 59px;
-  transform-origin: 108.75px 59px;
-  caret-color: rgb(68, 68, 68);
-  border: 0px none rgb(68, 68, 68);
-  border-top: 0px none rgb(68, 68, 68);
-  border-right: 0px none rgb(68, 68, 68);
-  border-bottom: 0px none rgb(68, 68, 68);
-  border-left: 0px none rgb(68, 68, 68);
-  border-color: rgb(68, 68, 68);
-  font: normal normal 700 normal 15px / 22.5px Gotham, gotham, Verdana, sans-serif;
-  outline: rgb(68, 68, 68) none 0px;
   padding: 0px 0px 0px 15px;
 }
 
 .zestimate-similar-status-header {
-  border-bottom-color: rgb(68, 68, 68);
-  border-left-color: rgb(68, 68, 68);
-  border-right-color: rgb(68, 68, 68);
-  border-top-color: rgb(68, 68, 68);
-  box-sizing: border-box;
-  color: rgb(68, 68, 68);
-  font-family: Gotham, gotham, Verdana, sans-serif;
-  font-size: 13px;
-  height: 15px;
-  line-height: 15px;
-  margin-bottom: 15px;
-  margin-top: 0px;
-  outline-color: rgb(68, 68, 68);
-  text-decoration: none solid rgb(68, 68, 68);
-  text-decoration-color: rgb(68, 68, 68);
-  text-size-adjust: 100%;
-  white-space: nowrap;
-  width: 202.516px;
-  column-rule-color: rgb(68, 68, 68);
-  perspective-origin: 101.25px 7.5px;
-  transform-origin: 101.25px 7.5px;
-  caret-color: rgb(68, 68, 68);
-  border: 0px none rgb(68, 68, 68);
-  border-top: 0px none rgb(68, 68, 68);
-  border-right: 0px none rgb(68, 68, 68);
-  border-bottom: 0px none rgb(68, 68, 68);
-  border-left: 0px none rgb(68, 68, 68);
-  border-color: rgb(68, 68, 68);
-  font: normal normal 700 normal 13px / 15px Gotham, gotham, Verdana, sans-serif;
   margin: 0px 0px 15px;
-  outline: rgb(68, 68, 68) none 0px;
 }
 
 .zestimate-similar-status-div {
-  border-bottom-color: rgb(68, 68, 68);
-  border-left-color: rgb(68, 68, 68);
-  border-right-color: rgb(68, 68, 68);
-  border-top-color: rgb(68, 68, 68);
-  box-sizing: border-box;
-  color: rgb(68, 68, 68);
-  font-family: Gotham, gotham, Verdana, sans-serif;
-  font-size: 13px;
-  font-weight: 700;
-  height: 15px;
-  line-height: 15px;
-  outline-color: rgb(68, 68, 68);
-  text-decoration: none solid rgb(68, 68, 68);
-  text-decoration-color: rgb(68, 68, 68);
-  text-size-adjust: 100%;
-  white-space: nowrap;
-  width: 202.516px;
-  column-rule-color: rgb(68, 68, 68);
-  perspective-origin: 101.25px 7.5px;
-  transform-origin: 101.25px 7.5px;
-  caret-color: rgb(68, 68, 68);
-  border: 0px none rgb(68, 68, 68);
-  border-top: 0px none rgb(68, 68, 68);
-  border-right: 0px none rgb(68, 68, 68);
-  border-bottom: 0px none rgb(68, 68, 68);
-  border-left: 0px none rgb(68, 68, 68);
-  border-color: rgb(68, 68, 68);
   font: normal normal 700 normal 13px / 15px Gotham, gotham, Verdana, sans-serif;
-  outline: rgb(68, 68, 68) none 0px;
 }
 
-.zestimate-similar-status-icon {
-  border-bottom-color: rgb(68, 68, 68);
-  border-left-color: rgb(68, 68, 68);
-  border-right-color: rgb(68, 68, 68);
-  border-top-color: rgb(68, 68, 68);
-  box-sizing: border-box;
-  color: rgb(68, 68, 68);
-  font-family: Gotham, gotham, Verdana, sans-serif;
-  font-size: 10px;
-  font-weight: 700;
-  line-height: 10px;
-  outline-color: rgb(68, 68, 68);
-  padding-left: 5px;
-  padding-right: 10px;
-  text-decoration: none solid rgb(68, 68, 68);
-  text-decoration-color: rgb(68, 68, 68);
-  text-size-adjust: 100%;
-  vertical-align: middle;
-  white-space: nowrap;
-  column-rule-color: rgb(68, 68, 68);
-  perspective-origin: 0px 0px;
-  transform-origin: 0px 0px;
-  caret-color: rgb(68, 68, 68);
-  border: 0px none rgb(68, 68, 68);
-  border-top: 0px none rgb(68, 68, 68);
-  border-right: 0px none rgb(68, 68, 68);
-  border-bottom: 0px none rgb(68, 68, 68);
-  border-left: 0px none rgb(68, 68, 68);
-  border-color: rgb(68, 68, 68);
-  font: normal normal 700 normal 10px / 10px Gotham, gotham, Verdana, sans-serif;
-  outline: rgb(68, 68, 68) none 0px;
-  padding: 0px 10px 0px 5px;
+.status-icon {
+  height: 14px;
+  width: 14px;
+  margin-right: -1px;
 }
 
 .zestimate-similar-zestimate {
-  border-bottom-color: rgb(68, 68, 68);
-  border-left-color: rgb(68, 68, 68);
-  border-right-color: rgb(68, 68, 68);
-  border-top-color: rgb(68, 68, 68);
-  box-sizing: border-box;
-  color: rgb(68, 68, 68);
-  font-family: Gotham, gotham, Verdana, sans-serif;
-  font-size: 28px;
-  height: 40px;
-  line-height: 40px;
-  margin-top: -15px;
-  outline-color: rgb(68, 68, 68);
-  text-decoration: none solid rgb(68, 68, 68);
-  text-decoration-color: rgb(68, 68, 68);
-  text-size-adjust: 100%;
-  white-space: nowrap;
-  width: 202.516px;
-  column-rule-color: rgb(68, 68, 68);
-  perspective-origin: 101.25px 20px;
-  transform-origin: 101.25px 20px;
-  caret-color: rgb(68, 68, 68);
-  border: 0px none rgb(68, 68, 68);
-  border-top: 0px none rgb(68, 68, 68);
-  border-right: 0px none rgb(68, 68, 68);
-  border-bottom: 0px none rgb(68, 68, 68);
-  border-left: 0px none rgb(68, 68, 68);
-  border-color: rgb(68, 68, 68);
   font: normal normal 400 normal 28px / 40px Gotham, gotham, Verdana, sans-serif;
   margin: -15px 0px 0px;
-  outline: rgb(68, 68, 68) none 0px;
 }
 
 .zestimate-similar-stats-container, .zestimate-similar-stats-info {
-  border-bottom-color: rgb(68, 68, 68);
-  border-left-color: rgb(68, 68, 68);
-  border-right-color: rgb(68, 68, 68);
-  border-top-color: rgb(68, 68, 68);
-  box-sizing: border-box;
-  color: rgb(68, 68, 68);
-  font-family: Gotham, gotham, Verdana, sans-serif;
-  font-size: 15px;
-  font-weight: 700;
-  height: 20px;
-  line-height: 20px;
-  outline-color: rgb(68, 68, 68);
-  text-decoration: none solid rgb(68, 68, 68);
-  text-decoration-color: rgb(68, 68, 68);
-  text-size-adjust: 100%;
-  white-space: nowrap;
-  width: 202.516px;
-  column-rule-color: rgb(68, 68, 68);
-  perspective-origin: 101.25px 10px;
-  transform-origin: 101.25px 10px;
-  caret-color: rgb(68, 68, 68);
-  border: 0px none rgb(68, 68, 68);
-  border-top: 0px none rgb(68, 68, 68);
-  border-right: 0px none rgb(68, 68, 68);
-  border-bottom: 0px none rgb(68, 68, 68);
-  border-left: 0px none rgb(68, 68, 68);
-  border-color: rgb(68, 68, 68);
   font: normal normal 700 normal 15px / 20px Gotham, gotham, Verdana, sans-serif;
-  outline: rgb(68, 68, 68) none 0px;
 }
 
 .zestimate-similar-address-link {
-  background-position: 0px 0px;
-  border-bottom-color: rgb(0, 116, 228);
-  border-left-color: rgb(0, 116, 228);
-  border-right-color: rgb(0, 116, 228);
-  border-top-color: rgb(0, 116, 228);
-  box-sizing: border-box;
   color: rgb(0, 116, 228);
-  font-family: Gotham, gotham, Verdana, sans-serif;
-  font-size: 15px;
-  line-height: 20px;
-  outline-color: rgb(0, 116, 228);
-  text-decoration: none solid rgb(0, 116, 228);
-  text-decoration-line: none;
-  text-decoration-color: rgb(0, 116, 228);
-  text-size-adjust: 100%;
   white-space: nowrap;
-  column-rule-color: rgb(0, 116, 228);
-  perspective-origin: 0px 0px;
-  transform-origin: 0px 0px;
-  caret-color: rgb(0, 116, 228);
-  background: rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box;
-  border: 0px none rgb(0, 116, 228);
-  border-top: 0px none rgb(0, 116, 228);
-  border-right: 0px none rgb(0, 116, 228);
-  border-bottom: 0px none rgb(0, 116, 228);
-  border-left: 0px none rgb(0, 116, 228);
   border-color: rgb(0, 116, 228);
   font: normal normal 400 normal 15px / 20px Gotham, gotham, Verdana, sans-serif;
-  outline: rgb(0, 116, 228) none 0px;
 }
 
 .zestimate-similar-proportional-stat{
-  border-bottom-color: rgb(68, 68, 68);
-  border-left-color: rgb(68, 68, 68);
-  border-right-color: rgb(68, 68, 68);
-  border-top-color: rgb(68, 68, 68);
-  bottom: 83px;
-  box-sizing: border-box;
-  color: rgb(68, 68, 68);
-  font-family: Gotham, gotham, Verdana, sans-serif;
-  font-size: 20px;
-  font-weight: 400;
-  height: 15px;
-  left: 595px;
-  line-height: 15px;
-  margin-bottom: 15px;
-  margin-top: 25px;
-  outline-color: rgb(68, 68, 68);
   position: absolute;
-  right: 0px;
-  text-decoration: none solid rgb(68, 68, 68);
-  text-decoration-color: rgb(68, 68, 68);
-  text-size-adjust: 100%;
-  top: 20px;
-  white-space: nowrap;
-  width: 60px;
-  column-rule-color: rgb(68, 68, 68);
-  perspective-origin: 24.8438px 7.5px;
-  transform-origin: 24.8438px 7.5px;
-  caret-color: rgb(68, 68, 68);
-  border: 0px none rgb(68, 68, 68);
-  border-top: 0px none rgb(68, 68, 68);
-  border-right: 0px none rgb(68, 68, 68);
-  border-bottom: 0px none rgb(68, 68, 68);
-  border-left: 0px none rgb(68, 68, 68);
-  border-color: rgb(68, 68, 68);
   font: normal normal 400 normal 20px / 15px Gotham, gotham, Verdana, sans-serif;
   margin: 25px 0px 15px;
-  outline: rgb(68, 68, 68) none 0px;
+  right: 0px;
 }
 
 #zestimate-graph-toolbar {
@@ -854,83 +379,51 @@
 }
 
 .zestimate-subexpand-explanation-container {
-    font-size: 15px;
-    font-weight: 700;
-    height: 110px;
-    line-height: 22.5px;
-    width: 654px;
-    perspective-origin: 327px 55px;
-    transform-origin: 327px 55px;
+  font-size: 15px;
+  font-weight: 700;
+  height: 110px;
+  line-height: 22.5px;
+  width: 654px;
 }
 
-/*#comparable-explanation {*/
-    /*font-size: 15px;*/
-    /*height: 110px;*/
-    /*line-height: 22.5px;*/
-    /*width: 654px;*/
-    /*perspective-origin: 327px 55px;*/
-    /*transform-origin: 327px 55px*/
-    /*font: normal normal 400 normal 15px / 22.5px Gotham, gotham, Verdana, sans-serif;*/
-/*}*/
-
 .zestimate-subdetail-title-name {
-    float: left;
+  float: left;
 }
 
 .zestimate-subdetail-value-name{
-    float: right;
-    text-align: right;
+  float: right;
+  text-align: right;
 }
 
 .zestimate-subdetail-heading-container {
-    font-size: 13px;
+  font-size: 13px;
 }
 
 #local-sale-container {
   height: 1770px;
-  text-size-adjust: 100%;
   width: 654px;
-  perspective-origin: 327px 44px;
-  transform-origin: 327px 44px;
   font: normal normal 700 normal 15px / 22.5px Gotham, gotham, Verdana, sans-serif;
 }
 
 .zestimate-subexpand-explanation {
   height: 88px;
-  text-size-adjust: 100%;
   width: 654px;
-  perspective-origin: 327px 44px;
-  transform-origin: 327px 44px;
   font: normal normal 400 normal 15px / 22.5px Gotham, gotham, Verdana, sans-serif;
 }
 
 #local-sale-descriptionSPAN_4, #local-sale-descriptionSPAN_5 {
-  text-size-adjust: 100%;
-  perspective-origin: 0px 0px;
-  transform-origin: 0px 0px;
   font: normal normal 400 normal 15px / 22.5px Gotham, gotham, Verdana, sans-serif;
 }
 
 .zestimate-accuracy-link {
-  background-position: 0px 0px;
   color: rgb(0, 116, 228);
-  text-decoration: none solid rgb(0, 116, 228);
-  text-size-adjust: 100%;
   column-rule-color: rgb(0, 116, 228);
-  perspective-origin: 0px 0px;
-  transform-origin: 0px 0px;
-  caret-color: rgb(0, 116, 228);
-  background: rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box;
-  border: 0px none rgb(0, 116, 228);
   font: normal normal 300 normal 15px / 22.5px Gotham, gotham, Verdana, sans-serif;
-  outline: rgb(0, 116, 228) none 0px;
 }
 
 .zestimate-compare-container {
   height: 193px;
   width: 654px;
-  perspective-origin: 327px 96.5px;
-  transform-origin: 327px 96.5px;
   font: normal normal 400 normal 15px / 22.5px Gotham, gotham, Verdana, sans-serif;
   padding: 20px 0px 0px;
 }
@@ -938,84 +431,105 @@
 .how-calculated-header {
   height: 19px;
   width: 654px;
-  perspective-origin: 327px 9.5px;
-  transform-origin: 327px 9.5px;
   font: normal normal 800 normal 13px / 19.5px Gotham, gotham, Verdana, sans-serif;
   margin: 0px 0px 15px;
 }
 
 .zestimate-compare-before {
-  bottom: 0px;
-  height: 139px;
-  left: 0px;
-  position: relative;
-  right: 0px;
-  top: 0px;
-  width: 654px;
-  perspective-origin: 327px 69.5px;
-  transform-origin: 327px 69.5px;
-  font: normal normal 100 normal 15px / 22.5px Gotham, gotham, Verdana, sans-serif;
   padding: 30px 0px 0px;
 }
 
 .zestimate-compare-value, .zestimate-compare-value-after{
   display: inline-block;
-  height: 58px;
   text-align: center;
   vertical-align: top;
-  width: 196.188px;
-  perspective-origin: 98.0938px 29px;
-  transform-origin: 98.0938px 29px;
   font: normal normal 100 normal 20px / 30px Gotham, gotham, Verdana, sans-serif;
   margin: 0px 0px 15px;
 }
 
 .zestimate-compare-before-title, .zestimate-compare-after {
   display: block;
-  height: 18px;
-  text-align: center;
   width: 196.188px;
-  perspective-origin: 98.0938px 9px;
-  transform-origin: 98.0938px 9px;
   font: normal normal 100 normal 12px / 18px Gotham, gotham, Verdana, sans-serif;
   margin: 10px 0px 0px;
 }
 
 .compare-symbol {
   display: inline-block;
-  height: 30px;
   text-align: center;
-  vertical-align: top;
   width: 32.6875px;
-  perspective-origin: 16.3438px 15px;
-  transform-origin: 16.3438px 15px;
   font: normal normal 100 normal 20px / 30px Gotham, gotham, Verdana, sans-serif;
   margin: 0px 0px 15px;
 }
 
 .zestimate-compare-percent {
   display: inline-block;
-  height: 94px;
   text-align: center;
   vertical-align: top;
-  width: 196.188px;
-  perspective-origin: 98.0938px 47px;
-  transform-origin: 98.0938px 47px;
   font: normal normal 100 normal 20px / 30px Gotham, gotham, Verdana, sans-serif;
-  margin: 0px 0px 15px;
 }
 
 .zestimate-compare-percent-value {
   display: block;
-  height: 54px;
-  text-align: center;
   width: 196.188px;
-  perspective-origin: 98.0938px 27px;
-  transform-origin: 98.0938px 27px;
   font: normal normal 100 normal 12px / 18px Gotham, gotham, Verdana, sans-serif;
   margin: 10px 0px 0px;
 }
 
 .tax-assessment {
-    left: 560px;
+  left: 560px;
+}
+
+#close-zestimate-details{
+  cursor: pointer;
+  box-sizing: border-box;
+  color: rgb(0, 116, 228);
+  display: inline-block;
+  text-align: center;
+  width: 654px;
+  margin-top: 15px;
+}
+
+#mortgage-wrapper {
+  display: flex;
+}
+
+
+#mortgage-select {
+  background-position: 100% -28px;
+  box-shadow: rgb(250, 250, 250) 0px 2px 2px 0px inset, rgb(98, 174, 247) 0px 0px 0px 0px;
+  color: rgb(68, 68, 68);
+  height: 20px;
+  min-height: 0px;
+  text-decoration: none solid rgb(68, 68, 68);
+  width: 260px;
+  column-rule-color: rgb(68, 68, 68);
+  border: 1px solid rgb(170, 170, 170);
+  border-radius: 0px 0px 0px 0px;
+  font: normal normal 400 normal 15px / 20px Gotham, gotham, Verdana, sans-serif;
+  padding: 0px 23px 0px 6px;
+}
+
+.mortgage-num-input {
+  width: 260px;
+}
+
+.mortgage-shorter {
+  width: 200px;
+}
+
+.mortgage-percent {
+  width: 55px;
+}
+
+#mortgage-input-container {
+  width: 280px;
+}
+
+#mortgage-chart-container {
+  float: right;
+  position: relative;
+  margin: -100px;
+  padding-left: 50px;
+    z-index: -1;
 }

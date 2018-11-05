@@ -9,7 +9,7 @@ import LocalTaxAssessments from './LocalTaxAssessments.js';
 import MarketAppreciation from './MarketAppreciation.js';
 import { HouseIdContext } from '../App';
 
-export default class ZestimateDetails extends React.Component {
+export default class ZestimateDetails extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -55,6 +55,7 @@ export default class ZestimateDetails extends React.Component {
             query={gql`
               query getTen($num: [Int]!) {
                 getSome(num: $num) {
+                  _id
                   address
                   beds
                   baths
@@ -107,8 +108,7 @@ export default class ZestimateDetails extends React.Component {
               );
 
               const lastSold = currentHouse.zestimate.slice(-49)[0];
-              const marketAppValue = currentHouse.zestimate[currentHouse.zestimate.length - 1]
-                - lastSold;
+              const marketAppValue = currentHouse.zestimate[currentHouse.zestimate.length - 1];
 
               return (
                 <div id="expand-zestimate-details-container">
@@ -137,7 +137,7 @@ export default class ZestimateDetails extends React.Component {
                               $
                               {this.state.comparableAverage}
                             </span>
-                            {this.props.status ? (
+                            {this.state.comparableHomes ? (
                               <img className="zest-chev" src="./down.png" />
                             ) : (
                               <img className="zest-chev" src="./up.png" />
@@ -169,7 +169,7 @@ export default class ZestimateDetails extends React.Component {
                                 Math.floor(currentHouse.taxAssessment),
                               )}
                             </span>
-                            {this.props.status ? (
+                            {this.state.localTaxAssessments ? (
                               <img className="zest-chev" src="./down.png" />
                             ) : (
                               <img className="zest-chev" src="./up.png" />
@@ -199,7 +199,7 @@ export default class ZestimateDetails extends React.Component {
                               $
                               {numberWithCommas(marketAppValue)}
                             </span>
-                            {this.props.status ? (
+                            {this.state.marketAppreciation ? (
                               <img className="zest-chev" src="./down.png" />
                             ) : (
                               <img className="zest-chev" src="./up.png" />
@@ -229,7 +229,7 @@ export default class ZestimateDetails extends React.Component {
                               $
                               {this.state.localSaleAverage}
                             </span>
-                            {this.props.status ? (
+                            {this.state.localSalePrices ? (
                               <img className="zest-chev" src="./down.png" />
                             ) : (
                               <img className="zest-chev" src="./up.png" />
@@ -257,6 +257,7 @@ export default class ZestimateDetails extends React.Component {
                       {this.props.graph && (
                         <ZestimateChart selected={this.props.selected} />
                       )}
+                      <a id="close-zestimate-details" onClick={this.props.collapse}>Close{'  '}<span id="close-zestimate-details-icon"><b>^</b></span></a>
                     </div>
                   </div>
                 </div>

@@ -11,7 +11,7 @@ import {
 
 const formatter = num => `${num / 1000}K`;
 
-export default class HomeChart extends React.Component {
+export default class HomeChart extends React.PureComponent {
   render() {
     return (
       <LineChart

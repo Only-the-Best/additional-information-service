@@ -3,6 +3,7 @@ import resolvers from './resolvers.js';
 
 const typeDefs = `
   type Home {
+    _id: String!
     address: String!
     city: String!
     zestimate: [Int]!

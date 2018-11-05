@@ -1,7 +1,7 @@
 const faker = require('faker');
 const mongoose = require('mongoose');
 const House = require('./House.js');
-const db = require('./index.js');
+
 
 const random = num => Math.ceil(Math.random() * num);
 
@@ -43,25 +43,33 @@ const zestHistory = () => {
   });
 };
 
-let count = 0;
-const seed = Array.from({ length: 100 }, () => {
-  const id = count;
-  count++;
 
-  const zestimate = zestHistory();
-  return {
-    _id: id.toString(),
-    address: faker.address.streetAddress(),
-    city: faker.address.city(),
-    zip: 98100 + random(99),
-    zestimate: zestimate,
-    beds: 3 + Math.floor(Math.random() * 2.5),
-    baths: 2.5 + 0.5 * Math.floor(Math.random() * 3),
-    sqFt: 1150 + 10 * random(20),
-    status: Math.random() < 0.5 ? 'For Sale' : 'Sold',
-    taxAssessment: zestimate[zestimate.length - 1] * 0.937,
-  };
-});
+
+const seedFunc = () => {
+  let count = 0;
+  return Array.from({ length: 100 }, () => {
+    const id = count;
+    count++;
+
+    const zestimate = zestHistory();
+    return {
+      _id: id.toString(),
+      address: faker.address.streetAddress(),
+      city: faker.address.city(),
+      zip: 98100 + random(99),
+      zestimate: zestimate,
+      beds: 3 + Math.floor(Math.random() * 2.5),
+      baths: 2.5 + 0.5 * Math.floor(Math.random() * 3),
+      sqFt: 1150 + 10 * random(20),
+      status: Math.random() < 0.5 ? 'For Sale' : 'Sold',
+      taxAssessment: zestimate[zestimate.length - 1] * 0.937,
+    };
+  });
+};
+
+
+const seed = seedFunc();
+module.exports = seedFunc;
 
 const seedDatabase = () => {
   House.create(seed)
@@ -70,3 +78,5 @@ const seedDatabase = () => {
 };
 
 seedDatabase();
+
+

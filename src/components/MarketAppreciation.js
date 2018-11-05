@@ -1,6 +1,6 @@
 import React from 'react';
 import moment from 'moment';
-import LocalTax from './LocalTax';
+
 
 const MarketAppreciation = ({ market }) => {
   const numberWithCommas = x => x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
@@ -56,10 +56,10 @@ const MarketAppreciation = ({ market }) => {
             <h3 className="compare-symbol">=</h3>
             <div className="zestimate-compare-value-after">
               $
-              {numberWithCommas(Math.floor(current - lastSold))}
+              {numberWithCommas(Math.floor(current + 596))}
               {' '}
               <span className="zestimate-compare-after">
-                tax-based estimate
+                sale-based estimate
               </span>
             </div>
           </div>

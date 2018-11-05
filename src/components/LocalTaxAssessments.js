@@ -22,6 +22,7 @@ const LocalTaxAssessments = ({ houses, taxAssessment }) => {
           </span>
         </div>
         <div className="zestimate-compare-container">
+          <br />
           <h5 className="how-calculated-header">How it’s calculated:</h5>
           <div className="zestimate-compare-before">
             <div className="zestimate-compare-value">
