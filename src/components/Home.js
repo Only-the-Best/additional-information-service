@@ -62,7 +62,12 @@ const Home = class extends React.PureComponent {
             </div>
           </div>
           <div id="zestimate-change-container">
-            <span id="zestimate-change-image-container" className={lastMonth > 0 ? 'zestimate-change-up' : 'zestimate-change-down'}/>
+            <span
+              id="zestimate-change-image-container"
+              className={
+                lastMonth > 0 ? 'zestimate-change-up' : 'zestimate-change-down'
+              }
+            />
             <div id="zestimate-change-title-container">
               <div id="zestimate-change-title">Last 30 Day Change</div>
               <div id="zestimate-change-value">
@@ -118,7 +123,9 @@ const Home = class extends React.PureComponent {
         <div id="zestimate-history-container">
           {!this.state.zestimateInside && (
             <a onClick={this.expandHome} id="zestimate-history-title">
-              Zestimate history &amp; details <b>&or;</b>
+              Zestimate history &amp; details
+              {' '}
+              <b>&or;</b>
             </a>
           )}
         </div>

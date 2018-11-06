@@ -1,9 +1,9 @@
 import React from 'react';
+import NumberFormat from 'react-number-format';
 import Template from './Template.js';
 import MortgageChart from './MortgageChart.js';
-import { HouseIdContext }from '../App.js';
-import NumberFormat from 'react-number-format';
-import MortgageChartLegend from "./MortgageChartLegend";
+import { HouseIdContext } from '../App.js';
+import MortgageChartLegend from './MortgageChartLegend';
 
 class MortgageBase extends React.PureComponent {
   constructor(props) {
@@ -35,7 +35,7 @@ class MortgageBase extends React.PureComponent {
 
   handleSubmit(e) {
     e.preventDefault();
-    //here could do whatever is necessary with submitted value, currently didn't implement
+    // here could do whatever is necessary with submitted value, currently didn't implement
   }
 
   select(e) {
@@ -46,37 +46,44 @@ class MortgageBase extends React.PureComponent {
     this.setState({
       price: this.zestimate,
       downPayment: Math.floor(this.zestimate * 0.0425),
-      propertyTax: Math.floor(this.zestimate * (this.state.propertyTaxPercent / 100)),
+      propertyTax: Math.floor(
+        this.zestimate * (this.state.propertyTaxPercent / 100),
+      ),
     });
     this.getPmi();
   }
 
   checkPmi() {
     if (this.state.displayPmi) {
-      this.setState({prevPmi: this.state.pmi});
-      this.setState({pmi: 0});
+      this.setState({ prevPmi: this.state.pmi });
+      this.setState({ pmi: 0 });
     } else {
       this.getPmi();
     }
-    this.setState({displayPmi: !this.state.displayPmi});
+    this.setState({ displayPmi: !this.state.displayPmi });
   }
 
   getPmi() {
-    let stillOwed = this.state.price - this.state.downPayment;
-    let pmi = Math.floor((stillOwed * 0.0050) / 12);
-    this.setState({pmi: pmi});
+    const stillOwed = this.state.price - this.state.downPayment;
+    const pmi = Math.floor((stillOwed * 0.005) / 12);
+    this.setState({ pmi });
   }
 
   checkTaxAndInsurance() {
     if (this.state.displayTaxes) {
-      this.setState({prevTax: this.state.propertyTax, prevIns: this.state.insurance});
-      this.setState({propertyTax: 0, insurance: 0});
+      this.setState({
+        prevTax: this.state.propertyTax,
+        prevIns: this.state.insurance,
+      });
+      this.setState({ propertyTax: 0, insurance: 0 });
     } else {
-      this.setState({propertyTax: this.state.prevTax, insurance: this.state.prevIns});
+      this.setState({
+        propertyTax: this.state.prevTax,
+        insurance: this.state.prevIns,
+      });
     }
-    this.setState({displayTaxes: !this.state.displayTaxes});
+    this.setState({ displayTaxes: !this.state.displayTaxes });
   }
-
 
   // handleChange(e) {
   //   this.setState({ [e.target.name]: e.target.value });
@@ -86,22 +93,37 @@ class MortgageBase extends React.PureComponent {
     let insurance = Math.floor(this.state.insurance / 12);
     let taxes = Math.floor(this.state.propertyTax / 12);
     const getPni = (total, years, rate) => {
-      let percent = (rate / 100) / 12;
-      let months = years * 12;
-      return (total * (percent * Math.pow(1 + percent, months))) /
-        (Math.pow(1 + percent, months) - 1);
+      const percent = rate / 100 / 12;
+      const months = years * 12;
+      return (
+        (total * (percent * Math.pow(1 + percent, months)))
+        / (Math.pow(1 + percent, months) - 1)
+      );
     };
 
-    const pni = this.state.loan === 'Fixed15Year' ? Math.floor(getPni(this.state.price - this.state.downPayment, 15, this.state.interest))
-              : Math.floor(getPni(this.state.price - this.state.downPayment, 30, this.state.interest));
+    const pni = this.state.loan === 'Fixed15Year'
+      ? Math.floor(
+        getPni(
+          this.state.price - this.state.downPayment,
+          15,
+          this.state.interest,
+        ),
+      )
+      : Math.floor(
+        getPni(
+          this.state.price - this.state.downPayment,
+          30,
+          this.state.interest,
+        ),
+      );
     taxes = this.state.displayTaxes ? taxes : 0;
     insurance = this.state.displayTaxes ? insurance : 0;
     const total = insurance + taxes + this.state.hoa + pni + this.state.pmi;
     const data = [
-      { name: 'P&I', value: pni, fill: '#0074E4'},
-      { name: 'Insurance', value: insurance , fill: '#62AEF7'},
-      { name: 'Taxes', value: taxes, fill: '#3290E9'},
-      { name: 'PMI', value: this.state.pmi, fill: '#1A5198'},
+      { name: 'P&I', value: pni, fill: '#0074E4' },
+      { name: 'Insurance', value: insurance, fill: '#62AEF7' },
+      { name: 'Taxes', value: taxes, fill: '#3290E9' },
+      { name: 'PMI', value: this.state.pmi, fill: '#1A5198' },
       { name: 'HOA', value: this.state.hoa, fill: '#D8FOF9' },
     ];
     const legendProps = {
@@ -114,118 +136,174 @@ class MortgageBase extends React.PureComponent {
     return (
       <HouseIdContext.Consumer>
         {({ currentHouse }) => {
-          const zestimate = Math.floor(currentHouse.zestimate[currentHouse.zestimate.length - 1]);
+          const zestimate = Math.floor(
+            currentHouse.zestimate[currentHouse.zestimate.length - 1],
+          );
           const dPayment = Math.floor(zestimate * (this.state.interest / 100));
           this.zestimate = zestimate;
           return (
-          <div id="mortgage-wrapper">
-            <div id="mortgage-input-container">
-              <form id="mortgage-input-form" onSubmit={this.handleSubmit}>
-                <label>Home price</label>
-                <br />
-                <NumberFormat
-                  value={this.state.price}
-                  className="mortgage-num-input"
-                  decimalScale={0}
-                  defaultValue={zestimate} displayType={'input'} thousandSeparator={true} prefix={'$'} onValueChange={(values) => {
-                  const {value} = values;
-                  this.getPmi();
-                  this.setState({price: Number(value)});
-                }}/>
-                <br />
-                <label>Down payment</label>
-                <br />
-                <NumberFormat
-                  className="mortgage-num-input mortgage-shorter"
-                  value={this.state.downPayment}
-                  decimalScale={0}
-                  defaultValue={dPayment} displayType={'input'} thousandSeparator={true} prefix={'$'} onValueChange={(values) => {
-                  const {value} = values;
-                  this.getPmi();
-                  this.setState({downPayment: Number(value)});
-                }}/>
-                <NumberFormat
-                  className="mortgage-percent"
-                  // value={this.state.price / this.state.downPayment}
-                  name='downPayment-percent'
-                  defaultValue={4.25} displayType={'input'}  suffix={'%'} onValueChange={(values) => {
-                  const {value} = values;
-                  this.setState({downPayment: this.state.price * (value / 100)});
-                }}/>
+            <div id="mortgage-wrapper">
+              <div id="mortgage-input-container">
+                <form id="mortgage-input-form" onSubmit={this.handleSubmit}>
+                  <label>Home price</label>
+                  <br />
+                  <NumberFormat
+                    value={this.state.price}
+                    className="mortgage-num-input"
+                    decimalScale={0}
+                    defaultValue={zestimate}
+                    displayType="input"
+                    thousandSeparator
+                    prefix="$"
+                    onValueChange={(values) => {
+                      const { value } = values;
+                      this.getPmi();
+                      this.setState({ price: Number(value) });
+                    }}
+                  />
+                  <br />
+                  <label>Down payment</label>
+                  <br />
+                  <NumberFormat
+                    className="mortgage-num-input mortgage-shorter"
+                    value={this.state.downPayment}
+                    decimalScale={0}
+                    defaultValue={dPayment}
+                    displayType="input"
+                    thousandSeparator
+                    prefix="$"
+                    onValueChange={(values) => {
+                      const { value } = values;
+                      this.getPmi();
+                      this.setState({ downPayment: Number(value) });
+                    }}
+                  />
+                  <NumberFormat
+                    className="mortgage-percent"
+                    // value={this.state.price / this.state.downPayment}
+                    name="downPayment-percent"
+                    defaultValue={4.25}
+                    displayType="input"
+                    suffix="%"
+                    onValueChange={(values) => {
+                      const { value } = values;
+                      this.setState({
+                        downPayment: this.state.price * (value / 100),
+                      });
+                    }}
+                  />
 
-                <br />
-                <label>Loan program</label>
-                <br />
-                <select id="mortgage-select" value={this.state.loan} onChange={this.select}>
-                  <option value="Fixed30Year">30-year fixed</option>
-                  <option value="Fixed15Year">15-year fixed</option>
-                  <option value="ARM5">5/1 ARM</option>
-                </select>
-                <br />
-                <label>Interest rate</label>
-                <br />
-                <NumberFormat
-                  className="mortgage-num-input"
-                  name="price"
-                  defaultValue={4.176} displayType={'input'} decimalScale={3} fixedDecimalScale={true} />
-                <br />
-                <input type='checkbox' id='pmi-checkbox' onClick={this.checkPmi}/>
-                <label>Include PMI</label>
-                <br />
-                <input type='checkbox' id='tax-insurance-checkbox' onClick={this.checkTaxAndInsurance} checked/>
-                <label>Include taxes/insurance</label>
-                <br />
-                <label>Property tax</label>
-                <br />
-                <NumberFormat
-                  className="mortgage-num-input mortgage-shorter"
-                  value={this.state.propertyTax}
-                  decimalScale={0}
-                  defaultValue={this.state.propertyTax} displayType={'input'} thousandSeparator={true} prefix={'$'} onValueChange={(values) => {
-                  const {value} = values;
-                  this.setState({propertyTax: Number(value)});
-                }}/>
-                <NumberFormat
-                  className="mortgage-percent"
-                  // value={(this.state.price / this.state.propertyTax).toFixed(3)}
-                  name='downPayment-percent'
-                  defaultValue={1.2} displayType={'input'}  suffix={'%'} onValueChange={(values) => {
-                  const {value} = values;
-                  this.setState({propertyTax: this.state.price * (value / 100)});
-                }}/>
-                <br />
-                <label>Home insurance</label>
-                <br />
-                <NumberFormat
-                  className="mortgage-num-input mortgage-shorter"
-                  value={this.state.insurance}
-                  decimalScale={0}
-                  defaultValue={dPayment} displayType={'input'} thousandSeparator={true} prefix={'$'} onValueChange={(values) => {
-                  const {value} = values;
-                  this.setState({insurance: Number(value)});
-                }}/>
-                <br />
-                <label>HOA dues</label>
-                <br />
-                <NumberFormat
-                  className="mortgage-num-input mortgage-shorter"
-                  value={this.state.hoa}
-                  decimalScale={0}
-                  defaultValue={dPayment} displayType={'input'} thousandSeparator={true} prefix={'$'} onValueChange={(values) => {
-                  const {value} = values;
-                  this.setState({hoa: Number(value)});
-                }}/>
-                <br />
-              </form>
+                  <br />
+                  <label>Loan program</label>
+                  <br />
+                  <select
+                    id="mortgage-select"
+                    value={this.state.loan}
+                    onChange={this.select}
+                  >
+                    <option value="Fixed30Year">30-year fixed</option>
+                    <option value="Fixed15Year">15-year fixed</option>
+                    <option value="ARM5">5/1 ARM</option>
+                  </select>
+                  <br />
+                  <label>Interest rate</label>
+                  <br />
+                  <NumberFormat
+                    className="mortgage-num-input"
+                    name="price"
+                    defaultValue={4.176}
+                    displayType="input"
+                    decimalScale={3}
+                    fixedDecimalScale
+                  />
+                  <br />
+                  <input
+                    type="checkbox"
+                    id="pmi-checkbox"
+                    onClick={this.checkPmi}
+                  />
+                  <label>Include PMI</label>
+                  <br />
+                  <input
+                    type="checkbox"
+                    id="tax-insurance-checkbox"
+                    onClick={this.checkTaxAndInsurance}
+                    checked
+                  />
+                  <label>Include taxes/insurance</label>
+                  <br />
+                  <label>Property tax</label>
+                  <br />
+                  <NumberFormat
+                    className="mortgage-num-input mortgage-shorter"
+                    value={this.state.propertyTax}
+                    decimalScale={0}
+                    defaultValue={this.state.propertyTax}
+                    displayType="input"
+                    thousandSeparator
+                    prefix="$"
+                    onValueChange={(values) => {
+                      const { value } = values;
+                      this.setState({ propertyTax: Number(value) });
+                    }}
+                  />
+                  <NumberFormat
+                    className="mortgage-percent"
+                    // value={(this.state.price / this.state.propertyTax).toFixed(3)}
+                    name="downPayment-percent"
+                    defaultValue={1.2}
+                    displayType="input"
+                    suffix="%"
+                    onValueChange={(values) => {
+                      const { value } = values;
+                      this.setState({
+                        propertyTax: this.state.price * (value / 100),
+                      });
+                    }}
+                  />
+                  <br />
+                  <label>Home insurance</label>
+                  <br />
+                  <NumberFormat
+                    className="mortgage-num-input mortgage-shorter"
+                    value={this.state.insurance}
+                    decimalScale={0}
+                    defaultValue={dPayment}
+                    displayType="input"
+                    thousandSeparator
+                    prefix="$"
+                    onValueChange={(values) => {
+                      const { value } = values;
+                      this.setState({ insurance: Number(value) });
+                    }}
+                  />
+                  <br />
+                  <label>HOA dues</label>
+                  <br />
+                  <NumberFormat
+                    className="mortgage-num-input mortgage-shorter"
+                    value={this.state.hoa}
+                    decimalScale={0}
+                    defaultValue={dPayment}
+                    displayType="input"
+                    thousandSeparator
+                    prefix="$"
+                    onValueChange={(values) => {
+                      const { value } = values;
+                      this.setState({ hoa: Number(value) });
+                    }}
+                  />
+                  <br />
+                </form>
+              </div>
+              <img id="chart-dots" src="/chart-dots.png" />
+              <MortgageChartLegend data={legendProps} />
+              <div id="mortgage-chart-container">
+                <MortgageChart data={data} total={total} />
+              </div>
             </div>
-            <img id="chart-dots" src="/chart-dots.png" />
-            <MortgageChartLegend data={legendProps}/>
-            <div id="mortgage-chart-container">
-              <MortgageChart data={data} total={total}/>
-            </div>
-          </div>
-          )}
-        }
+          );
+        }}
       </HouseIdContext.Consumer>
     );
   }

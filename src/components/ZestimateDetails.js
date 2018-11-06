@@ -123,14 +123,14 @@ export default class ZestimateDetails extends React.PureComponent {
                     <h4 id="estimate-based-on-title">Estimate based on</h4>
                     <div id="zestimate-subcat-container">
                       <section
-                        className='expand-subcontainer'
-                        id='expand-comparable'
+                        className="expand-subcontainer"
+                        id="expand-comparable"
                         onClick={this.expandComparable}
                       >
-                        <div className='zestimate-detail-summary'>
-                          <span className='zestimate-detail-spacing' />
-                          <div className='zestimate-detail-title'>
-                            <span className='zestimate-detail-label'>
+                        <div className="zestimate-detail-summary">
+                          <span className="zestimate-detail-spacing" />
+                          <div className="zestimate-detail-title">
+                            <span className="zestimate-detail-label">
                               Comparable homes
                             </span>
                             <span id="comparable-homes-average">
@@ -152,14 +152,14 @@ export default class ZestimateDetails extends React.PureComponent {
                         />
                       )}
                       <section
-                        className='expand-subcontainer'
-                        id='expand-tax-assessment'
+                        className="expand-subcontainer"
+                        id="expand-tax-assessment"
                         onClick={this.expandLocalTax}
                       >
-                        <div className='zestimate-detail-summary'>
-                          <span className='zestimate-detail-spacing' />
-                          <div className='zestimate-detail-title'>
-                            <span className='zestimate-detail-label'>
+                        <div className="zestimate-detail-summary">
+                          <span className="zestimate-detail-spacing" />
+                          <div className="zestimate-detail-title">
+                            <span className="zestimate-detail-label">
                               Local tax assessments
                             </span>
                             {' '}
@@ -184,14 +184,14 @@ export default class ZestimateDetails extends React.PureComponent {
                         />
                       )}
                       <section
-                        className='expand-subcontainer'
-                        id='expand-market'
+                        className="expand-subcontainer"
+                        id="expand-market"
                         onClick={this.expandMarket}
                       >
-                        <div className='zestimate-detail-summary'>
-                          <span className='zestimate-detail-spacing' />
-                          <div className='zestimate-detail-title'>
-                            <span className='zestimate-detail-label'>
+                        <div className="zestimate-detail-summary">
+                          <span className="zestimate-detail-spacing" />
+                          <div className="zestimate-detail-title">
+                            <span className="zestimate-detail-label">
                               Market appreciation
                             </span>
                             {' '}
@@ -214,14 +214,14 @@ export default class ZestimateDetails extends React.PureComponent {
                         />
                       )}
                       <section
-                        className='expand-subcontainer'
-                        id='expand-local-sale'
+                        className="expand-subcontainer"
+                        id="expand-local-sale"
                         onClick={this.expandLocalSale}
                       >
-                        <div className='zestimate-detail-summary'>
-                          <span className='zestimate-detail-spacing' />
-                          <div className='zestimate-detail-title'>
-                            <span className='zestimate-detail-label'>
+                        <div className="zestimate-detail-summary">
+                          <span className="zestimate-detail-spacing" />
+                          <div className="zestimate-detail-title">
+                            <span className="zestimate-detail-label">
                               Local sale prices
                             </span>
                             {' '}
@@ -257,7 +257,16 @@ export default class ZestimateDetails extends React.PureComponent {
                       {this.props.graph && (
                         <ZestimateChart selected={this.props.selected} />
                       )}
-                      <a id="close-zestimate-details" onClick={this.props.collapse}>Close{'  '}<span id="close-zestimate-details-icon"><b>^</b></span></a>
+                      <a
+                        id="close-zestimate-details"
+                        onClick={this.props.collapse}
+                      >
+                        Close
+                        {'  '}
+                        <span id="close-zestimate-details-icon">
+                          <b>^</b>
+                        </span>
+                      </a>
                     </div>
                   </div>
                 </div>

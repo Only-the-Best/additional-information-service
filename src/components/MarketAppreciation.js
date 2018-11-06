@@ -1,7 +1,6 @@
 import React from 'react';
 import moment from 'moment';
 
-
 const MarketAppreciation = ({ market }) => {
   const numberWithCommas = x => x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
   const current = market[market.length - 1];
@@ -47,7 +46,7 @@ const MarketAppreciation = ({ market }) => {
             <h3 className="compare-symbol">+</h3>
             <div className="zestimate-compare-percent">
               {percentage}
- %
+               %
               {' '}
               <span className="zestimate-compare-percent-value">
                 Local market appreciation since sale

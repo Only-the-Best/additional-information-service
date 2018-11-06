@@ -1,7 +1,7 @@
 import React from 'react';
-import {Query} from "react-apollo";
-import App from "../App";
+import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
+import App from '../App';
 
 export const PreQuery = () => {
   let rand = [Math.floor(Math.random() * 100)];

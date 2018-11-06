@@ -4,7 +4,7 @@ import ComparableHome from './ComparableHome.js';
 const ComparableHomes = ({ houses }) => (
   <div className="zestimate-subexpand-container">
     <div className="zestimate-subexpand-explanation-container">
-      <div className="zestimate-subexpand-explanation" data-test='comparable'>
+      <div className="zestimate-subexpand-explanation" data-test="comparable">
         <br />
         This estimate looks at for-sale or recently sold homes with similar
         features to this home, like its location, square footage and beds/baths.

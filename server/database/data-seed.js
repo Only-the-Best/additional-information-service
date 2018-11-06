@@ -2,7 +2,6 @@ const faker = require('faker');
 const mongoose = require('mongoose');
 const House = require('./House.js');
 
-
 const random = num => Math.ceil(Math.random() * num);
 
 const zestHistory = () => {
@@ -43,8 +42,6 @@ const zestHistory = () => {
   });
 };
 
-
-
 const seedFunc = () => {
   let count = 0;
   return Array.from({ length: 100 }, () => {
@@ -57,7 +54,7 @@ const seedFunc = () => {
       address: faker.address.streetAddress(),
       city: faker.address.city(),
       zip: 98100 + random(99),
-      zestimate: zestimate,
+      zestimate,
       beds: 3 + Math.floor(Math.random() * 2.5),
       baths: 2.5 + 0.5 * Math.floor(Math.random() * 3),
       sqFt: 1150 + 10 * random(20),
@@ -66,7 +63,6 @@ const seedFunc = () => {
     };
   });
 };
-
 
 const seed = seedFunc();
 module.exports = seedFunc;
@@ -78,5 +74,3 @@ const seedDatabase = () => {
 };
 
 seedDatabase();
-
-
