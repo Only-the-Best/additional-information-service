@@ -3,6 +3,7 @@ import Template from './Template.js';
 import MortgageChart from './MortgageChart.js';
 import { HouseIdContext }from '../App.js';
 import NumberFormat from 'react-number-format';
+import MortgageChartLegend from "./MortgageChartLegend";
 
 class MortgageBase extends React.PureComponent {
   constructor(props) {
@@ -17,9 +18,19 @@ class MortgageBase extends React.PureComponent {
       propertyTaxPercent: 1.2,
       insurance: 1200,
       hoa: 0,
+      pmi: 0,
+      displayTaxes: true,
+      displayPmi: false,
+      prevTax: 0,
+      prevIns: 0,
+      prevPmi: 0,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.select = this.select.bind(this);
+    this.checkPmi = this.checkPmi.bind(this);
+    this.checkTaxAndInsurance = this.checkTaxAndInsurance.bind(this);
+    this.checkPmi = this.checkPmi.bind(this);
+    this.getPmi = this.getPmi.bind(this);
   }
 
   handleSubmit(e) {
@@ -27,8 +38,8 @@ class MortgageBase extends React.PureComponent {
     //here could do whatever is necessary with submitted value, currently didn't implement
   }
 
-  select (e) {
-    this.setState({ loan: e.target.value }, () => console.log(this.state));
+  select(e) {
+    this.setState({ loan: e.target.value });
   }
 
   componentDidMount() {
@@ -37,6 +48,33 @@ class MortgageBase extends React.PureComponent {
       downPayment: Math.floor(this.zestimate * 0.0425),
       propertyTax: Math.floor(this.zestimate * (this.state.propertyTaxPercent / 100)),
     });
+    this.getPmi();
+  }
+
+  checkPmi() {
+    if (this.state.displayPmi) {
+      this.setState({prevPmi: this.state.pmi});
+      this.setState({pmi: 0});
+    } else {
+      this.getPmi();
+    }
+    this.setState({displayPmi: !this.state.displayPmi});
+  }
+
+  getPmi() {
+    let stillOwed = this.state.price - this.state.downPayment;
+    let pmi = Math.floor((stillOwed * 0.0050) / 12);
+    this.setState({pmi: pmi});
+  }
+
+  checkTaxAndInsurance() {
+    if (this.state.displayTaxes) {
+      this.setState({prevTax: this.state.propertyTax, prevIns: this.state.insurance});
+      this.setState({propertyTax: 0, insurance: 0});
+    } else {
+      this.setState({propertyTax: this.state.prevTax, insurance: this.state.prevIns});
+    }
+    this.setState({displayTaxes: !this.state.displayTaxes});
   }
 
 
@@ -45,8 +83,8 @@ class MortgageBase extends React.PureComponent {
   // }
 
   render() {
-    const insurance = Math.floor(this.state.insurance / 12);
-    const taxes = Math.floor(this.state.propertyTax / 12);
+    let insurance = Math.floor(this.state.insurance / 12);
+    let taxes = Math.floor(this.state.propertyTax / 12);
     const getPni = (total, years, rate) => {
       let percent = (rate / 100) / 12;
       let months = years * 12;
@@ -56,14 +94,23 @@ class MortgageBase extends React.PureComponent {
 
     const pni = this.state.loan === 'Fixed15Year' ? Math.floor(getPni(this.state.price - this.state.downPayment, 15, this.state.interest))
               : Math.floor(getPni(this.state.price - this.state.downPayment, 30, this.state.interest));
-    const total = insurance + taxes + this.state.hoa + pni; // ADD MORE STUFF HERE
+    taxes = this.state.displayTaxes ? taxes : 0;
+    insurance = this.state.displayTaxes ? insurance : 0;
+    const total = insurance + taxes + this.state.hoa + pni + this.state.pmi;
     const data = [
       { name: 'P&I', value: pni, fill: '#0074E4'},
       { name: 'Insurance', value: insurance , fill: '#62AEF7'},
       { name: 'Taxes', value: taxes, fill: '#3290E9'},
-      { name: 'PMI', value: 0, fill: '#1A5198'},
+      { name: 'PMI', value: this.state.pmi, fill: '#1A5198'},
       { name: 'HOA', value: this.state.hoa, fill: '#D8FOF9' },
     ];
+    const legendProps = {
+      pni,
+      insurance,
+      taxes,
+      hoa: this.state.hoa,
+      pmi: this.state.pmi,
+    };
     return (
       <HouseIdContext.Consumer>
         {({ currentHouse }) => {
@@ -77,10 +124,12 @@ class MortgageBase extends React.PureComponent {
                 <label>Home price</label>
                 <br />
                 <NumberFormat
+                  value={this.state.price}
                   className="mortgage-num-input"
                   decimalScale={0}
                   defaultValue={zestimate} displayType={'input'} thousandSeparator={true} prefix={'$'} onValueChange={(values) => {
                   const {value} = values;
+                  this.getPmi();
                   this.setState({price: Number(value)});
                 }}/>
                 <br />
@@ -92,6 +141,7 @@ class MortgageBase extends React.PureComponent {
                   decimalScale={0}
                   defaultValue={dPayment} displayType={'input'} thousandSeparator={true} prefix={'$'} onValueChange={(values) => {
                   const {value} = values;
+                  this.getPmi();
                   this.setState({downPayment: Number(value)});
                 }}/>
                 <NumberFormat
@@ -118,6 +168,12 @@ class MortgageBase extends React.PureComponent {
                   className="mortgage-num-input"
                   name="price"
                   defaultValue={4.176} displayType={'input'} decimalScale={3} fixedDecimalScale={true} />
+                <br />
+                <input type='checkbox' id='pmi-checkbox' onClick={this.checkPmi}/>
+                <label>Include PMI</label>
+                <br />
+                <input type='checkbox' id='tax-insurance-checkbox' onClick={this.checkTaxAndInsurance} checked/>
+                <label>Include taxes/insurance</label>
                 <br />
                 <label>Property tax</label>
                 <br />
@@ -162,6 +218,8 @@ class MortgageBase extends React.PureComponent {
                 <br />
               </form>
             </div>
+            <img id="chart-dots" src="/chart-dots.png" />
+            <MortgageChartLegend data={legendProps}/>
             <div id="mortgage-chart-container">
               <MortgageChart data={data} total={total}/>
             </div>

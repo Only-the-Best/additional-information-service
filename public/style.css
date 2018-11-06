@@ -529,7 +529,18 @@
 #mortgage-chart-container {
   float: right;
   position: relative;
-  margin: -100px;
-  padding-left: 50px;
+  margin-left: -200px;
+  margin-top: -120px;
     z-index: -1;
+}
+
+#mortgage-chart-legend {
+  margin: 10px 0px 0px 15px;
+  font-size: 13px;
+  width: 130px;
+}
+
+#chart-dots {
+  height: 107px;
+  margin: 11px -10px 0px 0px;
 }

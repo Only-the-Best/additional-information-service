@@ -1,5 +1,5 @@
 import React from 'react';
-import { PieChart, Pie, Sector, Label } from 'recharts';
+import { PieChart, Pie, Sector, Label, Legend } from 'recharts';
 
 export default class MortgageChart extends React.Component{
 
