@@ -1,17 +1,58 @@
 {
-  "name": "",
-  "version": "",
-  "description": "",
-  "author": "",
+  "name": "additional-information-service",
+  "version": "1.0.0",
+  "description": "additional information for Zill-Woah!",
+  "author": "Brian Louie",
   "license": "",
   "engines": {
     "node": ">=6.13.0"
   },
   "scripts": {
+    "db:test": "jest src/spec/database.test.js --config ./renamed-config.js",
+    "test": "jest src/spec/App.test.js",
+    "dev": "webpack -d --mode development --watch ",
+    "db:seed": "node server/database/data-seed.js",
+    "start": "nodemon --exec babel-node server/server.js"
   },
   "dependencies": {
+    "apollo-boost": "^0.1.18",
+    "cors": "^2.8.4",
+    "express-graphql": "^0.6.12",
+    "faker": "^4.1.0",
+    "graphql": "^14.0.2",
+    "graphql-tools": "^4.0.2",
+    "moment": "^2.22.2",
+    "mongoose": "^5.3.7",
+    "mongoose-simple-random": "^0.4.1",
+    "react": "^16.6.0",
+    "react-apollo": "^2.2.4",
+    "react-dom": "^16.6.0",
+    "react-number-format": "^4.0.3",
+    "recharts": "^1.3.5"
   },
   "devDependencies": {
-    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor"
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/node": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.6.0",
+    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
+    "jest": "^23.6.0",
+    "jest-environment-node": "^23.4.0",
+    "jsdom": "13.0.0",
+    "jsdom-global": "3.0.2",
+    "mongodb-memory-server": "^2.6.2",
+    "ramda": "^0.25.0",
+    "regenerator-runtime": "^0.12.1",
+    "webpack": "^4.22.0",
+    "webpack-cli": "^3.1.2"
+  },
+  "jest": {
+    "setupTestFrameworkScriptFile": "<rootDir>/src/spec/setupTests.js",
+    "testEnvironment": "jsdom"
   }
 }
