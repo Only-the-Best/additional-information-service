@@ -296,7 +296,7 @@ class MortgageBase extends React.PureComponent {
                   <br />
                 </form>
               </div>
-              <img id="chart-dots" src="/chart-dots.png" />
+              <img id="chart-dots" src="https://s3-us-west-1.amazonaws.com/housing-hr/chart-dots.png" />
               <MortgageChartLegend data={legendProps} />
               <div id="mortgage-chart-container">
                 <MortgageChart data={data} total={total} />

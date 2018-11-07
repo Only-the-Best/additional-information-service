@@ -31,8 +31,8 @@ const SimilarHomeTemplate = ({ houses, start, stop }) => {
                   className="status-icon"
                   src={
                     house.status === 'For Sale'
-                      ? '/red-for-sale.png'
-                      : '/yellow-sold.png'
+                      ? 'https://s3-us-west-1.amazonaws.com/housing-hr/red-for-sale.png'
+                      : 'https://s3-us-west-1.amazonaws.com/housing-hr/yellow-sold.png'
                   }
                 />
               </span>
