@@ -133,6 +133,14 @@ class MortgageBase extends React.PureComponent {
       hoa: this.state.hoa,
       pmi: this.state.pmi,
     };
+    const lessThan100 =(values) => {
+      const {floatValue} = values;
+      return floatValue >= 0.00 && floatValue <= 100.00;
+    };
+    const lessThanPrice = (values) => {
+      const {floatValue} = values;
+      return floatValue >= 0.00 && floatValue <= this.state.price;
+    };
     return (
       <HouseIdContext.Consumer>
         {({ currentHouse }) => {
@@ -170,6 +178,7 @@ class MortgageBase extends React.PureComponent {
                     decimalScale={0}
                     defaultValue={dPayment}
                     displayType="input"
+                    isAllowed={lessThanPrice}
                     thousandSeparator
                     prefix="$"
                     onValueChange={(values) => {
@@ -182,6 +191,7 @@ class MortgageBase extends React.PureComponent {
                     className="mortgage-percent"
                     // value={this.state.price / this.state.downPayment}
                     name="downPayment-percent"
+                    isAllowed={lessThan100}
                     defaultValue={4.25}
                     displayType="input"
                     suffix="%"
@@ -211,6 +221,7 @@ class MortgageBase extends React.PureComponent {
                   <NumberFormat
                     className="mortgage-num-input"
                     name="price"
+                    isAllowed={lessThan100}
                     defaultValue={4.176}
                     displayType="input"
                     decimalScale={3}
@@ -238,6 +249,7 @@ class MortgageBase extends React.PureComponent {
                     className="mortgage-num-input mortgage-shorter"
                     value={this.state.propertyTax}
                     decimalScale={0}
+                    isAllowed={lessThanPrice}
                     defaultValue={this.state.propertyTax}
                     displayType="input"
                     thousandSeparator
@@ -253,6 +265,7 @@ class MortgageBase extends React.PureComponent {
                     name="downPayment-percent"
                     defaultValue={1.2}
                     displayType="input"
+                    isAllowed={lessThan100}
                     suffix="%"
                     onValueChange={(values) => {
                       const { value } = values;
@@ -267,6 +280,7 @@ class MortgageBase extends React.PureComponent {
                   <NumberFormat
                     className="mortgage-num-input mortgage-shorter"
                     value={this.state.insurance}
+                    isAllowed={lessThanPrice}
                     decimalScale={0}
                     defaultValue={dPayment}
                     displayType="input"
