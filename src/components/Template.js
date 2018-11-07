@@ -22,9 +22,9 @@ function Template(Component, name) {
               >
                 <span className="header-span">{title}</span>
                 {this.props.status ? (
-                  <img className="chev" src="./down.png" />
+                  <img className="chev" src="https://s3-us-west-1.amazonaws.com/housing-hr/down.png" />
                 ) : (
-                  <img className="chev" src="./up.png" />
+                  <img className="chev" src="https://s3-us-west-1.amazonaws.com/housing-hr/up.png" />
                 )}
               </h2>
               {this.props.status && (

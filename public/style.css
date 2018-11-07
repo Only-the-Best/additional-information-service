@@ -37,7 +37,7 @@
   height: 180px;
   width: 654px;
   align-items: center;
-  background: rgb(226, 239, 252) url('/zillow-robot.png') no-repeat scroll 100%
+  background: rgb(226, 239, 252) url('https://s3-us-west-1.amazonaws.com/housing-hr/zillow-robot.png') no-repeat scroll 100%
   100% / 180px padding-box border-box;
 }
 
@@ -64,7 +64,7 @@
   display: block;
   height: 56px;
   background: rgba(0, 0, 0, 0)
-  url('/zestimate-house-icon.svg')
+  url('https://s3-us-west-1.amazonaws.com/housing-hr/zestimate-house-icon.svg')
   repeat scroll 0% 0% / 56px 56px padding-box border-box;
   margin: 0px 71px 0px 70.9844px;
 }
@@ -106,13 +106,13 @@
 
 .zestimate-change-down {
   background: rgba(0, 0, 0, 0)
-  url('/zestimate-down-icon.svg')
+  url('https://s3-us-west-1.amazonaws.com/housing-hr/zestimate-down-icon.svg')
   repeat scroll 0% 0% / 56px 56px padding-box border-box;
 }
 
 .zestimate-change-up {
   background: rgba(0, 0, 0, 0)
-  url('/zestimate-up-icon.svg')
+  url('https://s3-us-west-1.amazonaws.com/housing-hr/zestimate-up-icon.svg')
   repeat scroll 0% 0% / 56px 56px padding-box border-box;
 }
 
@@ -157,7 +157,7 @@
   display: block;
   height: 56px;
   background: rgba(0, 0, 0, 0)
-  url('/zestimate-forecast-icon.svg')
+  url('https://s3-us-west-1.amazonaws.com/housing-hr/zestimate-forecast-icon.svg')
   repeat scroll 0% 0% / 56px 56px padding-box border-box;
   margin: 0px 71px 0px 70.9844px;
 }

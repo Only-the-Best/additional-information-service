@@ -1,6 +1,7 @@
 const faker = require('faker');
 const mongoose = require('mongoose');
 const House = require('./House.js');
+const db = require('./index.js');
 
 const random = num => Math.ceil(Math.random() * num);
 
